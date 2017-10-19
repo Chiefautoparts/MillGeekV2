@@ -11,7 +11,7 @@ def order_create(request):
 		if form.is_valid():
 			order = form.save()
 			for item in cart:
-				OrderItem.objects.create(order=order, product['product'], price=item['price'], quantity=item['quantity'])
+				OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
 			cart.clear()
 			request.session['order_id'] = order.id
 			return redirect(reverse('payment:process'))

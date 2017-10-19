@@ -1,0 +1,65 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Mill Geek Comics</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static "css/geek.css" %}">
+</head>
+<body>
+	<article>
+		<h1>Mill Geek Comics</h1>
+		<nav>
+			<ul>
+				<li><a href="{% url "home:index" %}">Geek Home</a></li>
+				<li><a href="#">Cast Us</a></li>
+				<li><a href="#">Us Geek</a></li>
+				<li><a href="#">Calendar</a></li>
+				<li><a href="#">Magic Events</a></li>
+				<li><a href="{% url "shop:product_list" %}">Ye Olde Merchant</a></li>
+			</ul>
+		</nav>
+	</article>
+	<article>
+		<section class="center">
+				<p id="subcenter">****Hot new Items****</p>
+				<img src="http://www.stevensegallery.com/284/196" alt="">
+		</section>
+		<section class="right">
+			<p id="subright">***upcoming Events*****</p>
+			<img src="http://www.stevensegallery.com/g/200/300" alt="">
+		</section>
+		<section class="left">
+			<p id="subleft">****Fantastic News Item*****</p>
+			<img src="http://www.stevensegallery.com/200/300" alt="">
+		</section>
+	</article>
+	<article>
+		<table>
+			<thead>
+				
+			</thead>
+			<th>
+				<td>Information</td>
+				<td>Location</td>
+				<td>Company</td>
+			</th>
+			<tr>
+				<td>Welcome</td>
+				<td>Aread Map</td>
+				<td>About Us</td>
+			</tr>
+			<tr>
+				<td>Schedule</td>
+				<td>Address</td>
+				<td>Terms</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>Contact Us</td>
+				<td></td>
+			</tr>
+		</table>
+		<h2>425-415-6666</h2>
+	</article>
+</body>
+</html>
