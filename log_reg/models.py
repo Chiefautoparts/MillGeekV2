@@ -6,6 +6,7 @@ import bcrypt
 import re
 from datetime import datetime
 
+
 class UserManager(models.Manager):
 	def authUser(self, postData):
 		status = {'valid':True, 'errors':[], 'user':None}
@@ -21,6 +22,9 @@ class UserManager(models.Manager):
 		if not re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", postData['email']):
 			status['valid'] = False
 			status['errors'].append('Fake Email. Please use valid email format')
+		if not postData['dob'] or postData['dob'] < 13:
+			status['valid'] = False
+			status['errors'].append('You are not old enough for this. go back to playing with disney toys')
 		if not postData['password'] or len(postData['password']) < 8:
 			status['valid'] = False
 			status['errors'].append('Password cannot be less than 8 characters')
@@ -30,7 +34,41 @@ class UserManager(models.Manager):
 		if status['valid'] is False:
 			return status
 
-		
+		user = User.objects.filter(username=postData['username'])
+
+		if user:
+			status['valid'] = False
+			status['errors'].append('All systems Failure. Could not register User')
+
+		if results['status']:
+			passWord = bcrypt.hashpw(postData['password'].encode(), bcrypt.gensalt())
+			user = User.objects.create(
+				first_name=postData['first_name'],
+				last_name=postData['last_name'],
+				username=postData['username'],
+				email=postData['email'],
+				dob=postData['dob'],
+				password=passWord)
+
+	def loginUser(self, postData):
+		status = {'valid':True, 'errors':[], 'user':None}
+		user = User.objects.filter(username=postData['username'])
+
+		try:
+			user
+		except IndexError as e:
+			status['valid'] = False
+			status['errors'].append('Username or password is not corrent')
+
+		if user[0]:
+			if user[0].password != bcrypt.hashpw(postData['password'].encode(), user[0].password.encode()):
+				status['valid'] = False
+				status['errors'].append('Something has gone horrifically wrong.')
+			else:
+				status['user'] = user[0].id
+		else:
+			status['valid'] = False
+		return status
 
 class User(models.Model):
 	first_name = models.CharField(max_length=100)
