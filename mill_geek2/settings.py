@@ -26,6 +26,7 @@ SECRET_KEY = '3)%$xgs+8*l%3bbn@(t7ni)-7_o70%i8==a3v%8e!m5ry@+$)_'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+#['2e38dc33.ngrok.io']
 
 
 # Application definition
@@ -44,6 +45,8 @@ INSTALLED_APPS = [
     'myshop.shop',
     'events',
     'about',
+    'paypal.standard.ipn',
+    'myshop.payment',
 ]
 
 MIDDLEWARE = [
@@ -126,8 +129,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
+
+# django-paypal settings
+PAYPAL_RECEIVER_EMAIL = 'chiefautoparts@outlook.com'
+PAYPAL_TEST = True
