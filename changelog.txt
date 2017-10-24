@@ -1,0 +1,64 @@
+
+JETPACK
+5.4
+
+Release date: October 3, 2017
+Release post: http://wp.me/p1moTy-67V
+Major Enhancements
+* Multiple improvements to the connection process, to allow more people to use the Jetpack plugin, even on very specific server configurations.
+* Add a new Welcome screen to guide site owners after they have purchased a Jetpack plan.
+
+Enhancements
+* Add Schema.org markup to the Contact Info Widget.
+* Add a new “Date” field to the Contact Form.
+* Added support in the Google Analytics feature for IP anonymization and basic WooCommerce tracking.
+* Do not show any update notices when in development mode.
+* Improve our documentation to help contributors set up a unit testing environment.
+* Avoid conflicts between Jetpack’s Infinite Scroll and other Infinite Scroll plugins.
+* Improvements to the WordPress.com REST API to avoid issues when interacting with your site’s categories and tags on WordPress.com.
+* Allow third party plugin and theme authors to add new menu items to the WordPress.com toolbar.
+* Improve the Content Options panel displayed in the Customizer with certain themes.
+* Add architecture for the Jetpack Search feature, available for Jetpack Professional users.
+* Simple Payments: improve the display of the payment items when used on your site.
+* Ensure a proper display of the Recipe shortcode on sites using an RTL language.
+* Improve the display of the Facebook posts, images, and all other Facebook embeds in your posts.
+* Synchronize the author information for all published posts.
+* Record how Jetpack was discovered and activated to better understand how site owners first discover Jetpack.
+* Improve the display and options offered with the Milestone Widget.
+
+###MAX BUTTONS###
+6.23
+
+Fixed font-size in color picker styling
+Adapted to changes on color picker layout ( WP 4.9 Alpha )
+
+
+###DISPLAY POSTS SHORTCUT###
+
+Version 2.9.0
+* New parameter exclude for excluding specific post IDs, see #154
+* New parameter category_id for specifying category by ID (note: only accepts a single ID), see #156
+* New parameter include_date_modified for displaying the date the post was last updated, see #150
+* Shortcode title now appears above the wrapper (ul/ol/div), fixing invalid markup, see #165
+* Limit visibility to readable posts
+
+###CUSTOM SIDEBAR###
+
+Version 2.9.0
+* New parameter exclude for excluding specific post IDs, see #154
+* New parameter category_id for specifying category by ID (note: only accepts a single ID), see #156
+* New parameter include_date_modified for displaying the date the post was last updated, see #150
+* Shortcode title now appears above the wrapper (ul/ol/div), fixing invalid markup, see #165
+* Limit visibility to readable posts
+
+###ALL IN ONE SEO###
+
+2.4.2 – Released on October 4, 2017:
+
+XML Sitemap – support relative URLs for images
+XML Sitemap – ignore external images
+XML Sitemap – reduce duplicate images
+XML Sitemap – added option to remove images (helpful for Yandex users)
+XML Sitemap – fix validation errors for Google Search Console in certain situations
+Bugfix – for compatibility with the Divi theme
+API – improvements to filter hook to remove images from XML Sitemap

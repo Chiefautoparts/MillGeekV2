@@ -44,7 +44,7 @@ class Cart(object):
 
 	def save(self):
 		self.session[settings.CART_SESSION_ID] = self.cart
-		self.session.modified = TEST_RUNNER
+		self.session.modified = True
 
 	def clear(self):
 		self.session[settings.CART_SESSION_ID] = {}

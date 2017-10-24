@@ -1,0 +1,27 @@
+{% extends "home/homebase.html" %}
+{% load static %}
+
+{% block title %}
+	<h2>Register for quicker checkouts, Event Notifactions and Sweet Deals!</h2>
+{% endblock %}
+
+{% block content %}
+	<form action="{% url "log_reg:register" %}">
+		{% csrf_token %}
+		<label for="first_name">First Name: </label>
+		<input type="text" name="first_name">
+		<label for="last_name">Last Name: </label>
+		<input type="text" name="last_name">
+		<label for="username">Username: </label>
+		<input type="text" name="username">
+		<label for="email">Email: </label>
+		<input type="text" name="email">
+		<label for="dob">Age: </label>
+		<input type="number" name="dob">
+		<label for="password">Password: </label>
+		<input type="password" name="password">
+		<label for="confpassword">Confirm Password: </label>
+		<input type="password" name="confpassword">
+		<input type="submit" name="submit" value="Register">
+	</form>
+{% endblock %}

@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3)%$xgs+8*l%3bbn@(t7ni)-7_o70%i8==a3v%8e!m5ry@+$)_'
+SECRET_KEY = 'getToTheChoppa'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
+#['2e38dc33.ngrok.io']
 
 
 # Application definition
@@ -37,6 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home',
+    'log_reg',
+    'myshop.cart',
+    'myshop.orders',
+    'myshop.shop',
+    'events',
+    'about',
+    'paypal.standard.ipn',
+    'myshop.payment',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'myshop.cart.context_processors.cart',
             ],
         },
     },
@@ -118,3 +129,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+CART_SESSION_ID = 'cart'
+
+# django-paypal settings
+PAYPAL_RECEIVER_EMAIL = 'chiefautoparts@outlook.com'
+PAYPAL_TEST = True

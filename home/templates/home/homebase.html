@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Mill Geek Comics{% endblock %}</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static "css/baseGeek.css" %}">
+</head>
+<body>
+	<div id="header">
+		<a href="/" class="logo">Mill Geek Comics</a>
+	</div>
+	<div id="subheader">
+		<div class="nav">
+			<ul>
+				<li><a href="{% url "home:index" %}">Geek Home</a></li>
+				<li><a href="#">Cast Us</a></li>
+				<li><a href="#">Us Geek</a></li>
+				<li><a href="#">Calendar</a></li>
+				<li><a href="#">Magic Events</a></li>
+				<li><a href="{% url "shop:product_list" %}">Ye Olde Merchant</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+</html>
