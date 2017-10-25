@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'myshop.shop',
     'events',
     'about',
+    'myshop.coupons',
     
 ]
 
