@@ -1,6 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
 from ..shop.models import Product
+from ..coupons.models import Coupon
 
 class Cart(object):
 
@@ -9,6 +10,8 @@ class Cart(object):
 		cart = self.session.get(settings.CART_SESSION_ID)
 		if not cart:
 			cart = self.session[settings.CART_SESSION_ID] = {}
+			# store current applied coupon
+		self.coupon_id = self.session.get('coupon_id')
 		self.cart = cart
 
 	def __len__(self):
