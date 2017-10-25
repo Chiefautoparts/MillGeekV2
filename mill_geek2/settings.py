@@ -40,13 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'log_reg',
+    'paypal.standard.ipn',
+    'myshop.payment',
     'myshop.cart',
     'myshop.orders',
     'myshop.shop',
     'events',
     'about',
-    'paypal.standard.ipn',
-    'myshop.payment',
+    
 ]
 
 MIDDLEWARE = [
