@@ -1,0 +1,14 @@
+{% extends "home/homebase.html" %}
+{% load static %}
+
+{% block title %}
+	<h2>Recent News</h2>
+{% endblock %}
+
+{% block content %}
+	<div id="newsFeed">
+		{% for post in posts %}
+			<p>{{ post.title }}</p>
+			<p>{{ post.body }}</p>
+			<p><img src="{{ post.img }}" alt=""></p>
+	</div>
