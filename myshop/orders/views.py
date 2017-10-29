@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 from .models import OrderItem, Order
 from .forms import OrderCreateForm
 from ..cart.cart import Cart
-from .tasks import order_created
+#from .tasks import order_created
 
 
 @staff_member_required
@@ -21,7 +21,7 @@ def order_create(request):
 				OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
 			cart.clear()
 			# launch asynchronous task
-			order_created.delay(order.id)
+			#order_created.delay(order.id)
 			return render(request, 'orders/order/created.html', {'order': order})
 	else:
 		form = OrderCreateForm()
