@@ -5,8 +5,6 @@ body {
 	background: #000;
 }
 
-
-
 .fade {
 	position: relative;
 	width: 100%;
@@ -58,23 +56,4 @@ body {
 		top: -6000px;
 		transform: rotateX(25deg) translateZ(-2500px);
 	}
-}
-
-section::after {
-	content: '<nav>
-		<ul class="nav-left">
-			<li><a href="{% url "home:index" %}">Geek Home</a></li>
-			<li><a href="{% url "about:usGeeks" %}">Us Geek</a></li>
-			<li><a href="#">Magic Events</a></li>
-			<li><a href="#">Cast Us</a></li>
-			<li><a href="#">Calendar</a></li>
-			<li><p>Online Shop</p>
-				<ul>
-					<li><a href="{% url "cart:cart" %}">Cart</a></li>
-					<li><a href="{% url "order:index" %}">Order</a></li>
-					<li><a href="{% url "catalog:product_list" %}"></a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>';
 }
