@@ -22,9 +22,9 @@ class UserManager(models.Manager):
 		if not re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", postData['email']):
 			status['valid'] = False
 			status['errors'].append('Fake Email. Please use valid email format')
-		if not postData['dob'] or postData['dob'] < 13:
+		if not postData['age'] or postData['age'] < 13:
 			status['valid'] = False
-			status['errors'].append('You are not old enough for this. go back to playing with disney toys')
+			status['errors'].append('You need parents permission to register')
 		if not postData['password'] or len(postData['password']) < 8:
 			status['valid'] = False
 			status['errors'].append('Password cannot be less than 8 characters')
@@ -47,7 +47,7 @@ class UserManager(models.Manager):
 				last_name=postData['last_name'],
 				username=postData['username'],
 				email=postData['email'],
-				dob=postData['dob'],
+				age=postData['age'],
 				password=passWord)
 
 	def loginUser(self, postData):
@@ -84,4 +84,3 @@ class User(models.Model):
 
 	def __str__(self):
 		return self.username + self.id
-
