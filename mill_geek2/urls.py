@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
  	url(r'^', include('home.urls', namespace='home')),
-    url(r'^blog/', include('blog.urls', namespace='blog', app_name='blog')),
+    #url(r'^blog/', include('blog.urls', namespace='blog', app_name='blog')),
  	url(r'^log_reg/', include('log_reg.urls', namespace='log_reg')),
     url(r'^about/', include('about.urls', namespace='about')),
  	url(r'^cart/', include('myshop.cart.urls', namespace='cart')),  
