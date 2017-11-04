@@ -29,7 +29,18 @@
 				<img src="http://www.stevensegallery.com/284/196" alt="">
 		</section>
 		<section class="right">
-			<p id="subright">***upcoming Events*****</p>
+			<h1>My blog</h1>
+	{% for post in posts %}
+	<h2>
+		<a href="{{ post.get_absolute_url }}">
+			{{ post.title }}
+		</a>
+	</h2>
+	<p class="date">
+		Published {{ post.published }} by {{ post.author }}
+	</p>
+	{{ post.body|truncatewords:30|linebreaks }}
+	{% endfor %}
 			<img src="http://www.stevensegallery.com/g/200/300" alt="">
 		</section>
 		<section class="left">
