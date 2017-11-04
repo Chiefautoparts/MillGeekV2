@@ -7,8 +7,8 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 
 class ProductAdmin(admin.ModelAdmin):
-	list_display = ['name', 'slug', 'category', 'price', 'available', 'created', 'updated']
+	list_display = ['name', 'slug', 'category', 'price', 'minOffer', 'available', 'created', 'updated']
 	list_filter = ['available', 'created', 'updated', 'category']
-	list_editable = ['price', 'available']
+	list_editable = ['price', 'minOffer', 'available']
 	prepopulated_fields = {'slug': ('name',)}
 admin.site.register(Product, ProductAdmin)
