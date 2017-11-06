@@ -17,14 +17,14 @@ def order_create(request):
 		form = OrderCreateForm(request.POST)
 		if form.is_valid():
 			order = form.save(commit=False)
-			if offer < item.minOffer:
-				error.append('Please make better offer')
-			elif offer >= minOffer:
-				cost = offer
-			if cost > item.price:
-				itemPrice = cost
-			else:
-				itemPrice = price
+			# if offer < item.minOffer:
+			# 	error.append('Please make better offer')
+			# elif offer >= minOffer:
+			# 	cost = offer
+			# if cost > item.price:
+			# 	itemPrice = cost
+			# else:
+			# 	itemPrice = price
 
 			if cart.coupon:
 				order.coupon = cart.coupon

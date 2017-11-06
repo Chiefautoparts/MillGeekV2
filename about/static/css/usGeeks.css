@@ -32,7 +32,7 @@ body {
 	position: relative;
 	top: 9999px;
 	transform-origin: 50% 100%;
-	animation: crawl 60s linear;
+	animation: crawl 120s linear;
 }
 
 .crawl > .title {
@@ -45,34 +45,6 @@ body {
 	text-transform: uppercase;
 }
 
-#navLeft {
-	@-webkit-keyframes fadeIn {
-	  0% {
-	    opacity: 0;
-	  }
-	
-	  100% {
-	    opacity: 1;
-	  }
-	}
-	
-	@keyframes fadeIn {
-	  0% {
-	    opacity: 0;
-	  }
-	
-	  100% {
-	    opacity: 1;
-	  }
-	}
-	
-	.fadeIn {
-	  -webkit-animation-name: fadeIn;
-	  animation-name: fadeIn;
-	};
-}
-
-
 @keyframes crawl {
 	0% {
 		top: 0;
@@ -83,4 +55,10 @@ body {
 		top: -6000px;
 		transform: rotateX(25deg) translateZ(-2500px);
 	}
+}
+
+#menu {
+	position: relative;
+	top: -250px;
+	left: 50px;
 }
