@@ -5,20 +5,18 @@
 	{% load static %}
 	<link rel="stylesheet" href="{% static 'css/home.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
 </head>
 <body>
 	<article>
 		<img src="{% static 'img/millgeeklogo.png' %}" alt="">
-		<nav class="navBar">
-			<ul>
-				<li><a href="{% url "home:index" %}">Geek Home</a></li>
-				<li><a href="#">Cast Us</a></li>
-				<li><a href="{% url 'about:usGeeks' %}">Us Geek</a></li>
-				<li><a href="#">Calendar</a></li>
-				<li><a href="#">Magic Events</a></li>
-				<li><a href="{% url 'shop:product_list' %}">Ye Olde Merchant</a></li>
-			</ul>
-		</nav>
+		<div class="topNav">
+			<a href="{% url 'home:index' %}">Geek Home</a>
+			<a href="#">Cast Us</a>
+			<a href="{% url 'about:usGeeks' %}">Us Geek</a>
+			<a href="#">Events</a>
+			<a href="{% url 'shop:product_list' %}">Ye Merchant Shope</a>
+		</div>
 		<p>Are you a member of our Secret Club Yet?</p>
 		<p>Register <a href="{% url 'log_reg:register' %}">here</a></p>
 		<p>Login <a href="{% url 'log_reg:login' %}">here</a></p>
