@@ -3,29 +3,29 @@
 	font-family: 'Source Code Pro', monospace;
 }
 
+html {
+	background: linear-gradient(#0F5E0C, #318F39);
+}
+
 body {
 	font-family: 'Nothing You Could Do', cursive;
 	background-image: url("img/background1.jpg");
-	image-rendering: crisp-edges;
 	background-repeat: no-repeat;
 	background-size: 100% 60%;
 	background-attachment: fixed;
 	background-position: top;
-	background-color: 
-}
-.navBar ul {
-	display: inline;
-	text-decoration: none;
+	margin: 0;
 }
 
-.navBar ul li {
-	display: inline-block;
+.main {
+	margin-top: 50px;
 }
 
 .topNav {
 	background-color: #2C6840FF;
 	overflow: hidden;
 	font-family: 'Source Code Pro', monospace;
+	width:70%;
 }
 
 .topNav a {
@@ -47,4 +47,9 @@ body {
 .topNav a.active {
 	background-color: #4CAF50;
 	color: #fff;
+}
+
+.right {
+	float: right;
+	bottom: 175px;
 }
