@@ -1,12 +1,55 @@
 @font-face {
 	font-family: 'Nothing You Could Do', cursive;
+	font-family: 'Source Code Pro', monospace;
+}
+
+html {
+	background: linear-gradient(#0F5E0C, #318F39);
 }
 
 body {
 	font-family: 'Nothing You Could Do', cursive;
 	background-image: url("img/background1.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 60%;
+	background-attachment: fixed;
+	background-position: top;
+	margin: 0;
 }
-.navBar {
-	display: inline;
+
+.main {
+	margin-top: 50px;
+}
+
+.topNav {
+	background-color: #2C6840FF;
+	overflow: hidden;
+	font-family: 'Source Code Pro', monospace;
+	width:70%;
+}
+
+.topNav a {
+	font-family: 'Source Code Pro', monospace;
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
 	text-decoration: none;
+	font-size: 17px;
+}
+
+.topNav a:hover {
+	background-color: #ddd;
+	color: #000;
+}
+
+.topNav a.active {
+	background-color: #4CAF50;
+	color: #fff;
+}
+
+.right {
+	float: right;
+	bottom: 175px;
 }
