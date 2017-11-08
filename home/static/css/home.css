@@ -11,21 +11,27 @@ body {
 	font-family: 'Nothing You Could Do', cursive;
 	background-image: url("img/background1.jpg");
 	background-repeat: no-repeat;
-	background-size: 100% 60%;
+	background-size: 100% 90%;
 	background-attachment: fixed;
 	background-position: top;
 	margin: 0;
+	color: #f2f2f2;
 }
 
-.main {
-	margin-top: 50px;
+
+.main article img {
+	margin: 50;
 }
 
 .topNav {
+	border-style: ridge;
+	border-color: #2f2f2f;
+	border-size: 7px;
+	margin-left: 80px;
 	background-color: #2C6840FF;
 	overflow: hidden;
 	font-family: 'Source Code Pro', monospace;
-	width:70%;
+	width: 650px;
 }
 
 .topNav a {
@@ -51,5 +57,10 @@ body {
 
 .right {
 	float: right;
-	bottom: 175px;
+	clear: both;
+}
+
+.center {
+	float: center;
+	clear: both;
 }
