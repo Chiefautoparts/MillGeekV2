@@ -1,6 +1,7 @@
 @font-face {
 	font-family: 'Nothing You Could Do', cursive;
 	font-family: 'Source Code Pro', monospace;
+	font-family: 'Acme', sans-serif;
 }
 
 html {
@@ -63,4 +64,17 @@ body {
 .center {
 	float: center;
 	clear: both;
+}
+
+#post {
+	font-family: 'Acme', sans-serif;
+	background-color: #B0B0B0FF;
+	color: #000;
+	width: 45%;
+
+}
+
+#post h2 {
+	text-shadow: -5px -5px 2px #fff;
+	border
 }

@@ -1,28 +1,38 @@
 @font-face {
 	font-family: 'Nothing You Could Do', cursive;
 	font-family: 'Source Code Pro', monospace;
+	font-family: 'Acme', sans-serif;
+}
+
+html {
+	background: linear-gradient(#0F5E0C, #318F39);
 }
 
 body {
 	font-family: 'Nothing You Could Do', cursive;
 	background-image: url("img/background1.jpg");
 	background-repeat: no-repeat;
+	background-size: 100% 90%;
 	background-attachment: fixed;
-	background-position: center;
-}
-.navBar ul {
-	display: inline;
-	text-decoration: none;
+	background-position: top;
+	margin: 0;
+	color: #f2f2f2;
 }
 
-.navBar ul li {
-	display: inline-block;
+
+.main article img {
+	margin: 50;
 }
 
 .topNav {
+	border-style: ridge;
+	border-color: #2f2f2f;
+	border-size: 7px;
+	margin-left: 80px;
 	background-color: #2C6840FF;
 	overflow: hidden;
 	font-family: 'Source Code Pro', monospace;
+	width: 650px;
 }
 
 .topNav a {
@@ -44,4 +54,25 @@ body {
 .topNav a.active {
 	background-color: #4CAF50;
 	color: #fff;
+}
+
+.right {
+	float: right;
+	clear: both;
+}
+
+.center {
+	float: center;
+	clear: both;
+}
+
+#post {
+	font-family: 'Acme', sans-serif;
+	background-color: #B0B0B0FF;
+	color: #000;
+
+}
+
+#post h2 {
+	text-shadow: -5px -5px 2 #fff
 }
