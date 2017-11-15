@@ -43,12 +43,25 @@
 				</h2>
 				<p class="date">
 					Published {{ post.publish }} by {{ post.author }}
-				</p>
+				</p class="body">
 				{{ post.body|truncatewords:30|linebreaks }}
 				{% endfor %}
 		</div>
 		<article>
-			<table>
+			<div class="footer">
+				<a id="link" href="#">Information</a>
+				<a id="link" href="#">Location</a>
+				<a id="link" href="#">Company</a>
+				<a id="link" href="#">Welcome</a>
+				<a id="link" href="#">Area Map</a>
+				<a id="link" href="#">About Us</a>
+				<a id="link" href="#">Schedule</a>
+				<a id="link" href="#">Address</a>
+				<a id="link" href="#">Terms</a>
+				<a id="link" href="#">Contact Us</a>
+				<h3 id="digits">(425) 415-6666</h3>
+			</div>
+			{# <table>
 				<thead>
 					
 				</thead>
@@ -73,7 +86,7 @@
 					<td></td>
 				</tr>
 			</table>
-			<h2>425-415-6666</h2>
+			<h2>425-415-6666</h2> #}
 		</article>
 	</main>
 </body>

@@ -28,7 +28,7 @@ def export_to_csv(modeladmin, request, queryset):
 export_to_csv.short_description = 'Export to CSV'
 
 def order_detail(obj):
-	return '<a href="{}">View</a>'.format(reverse('oders:admin_order_detail', arggs=[obj.id]))
+	return '<a href="{}">View</a>'.format(reverse('orders:admin_order_detail', args=[obj.id]))
 order_detail.allow_tags = True
 
 class OrderAdmin(admin.ModelAdmin):
