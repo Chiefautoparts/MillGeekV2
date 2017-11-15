@@ -29,6 +29,14 @@ def order_create(request):
 		form = OrderCreateForm(request.POST)
 		if form.is_valid():
 			order = form.save(commit=False)
+			for item in cart:
+				OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
+			cart.clear()
+			request.session['order_id'] = order.id
+			return redirect(reverse('payment:process'))
+	else:
+		form = OrderCreateForm()
+	return render(request, 'orders/order/create.html', {'cart': cart, 'form':form})
 			# if offer < item.minOffer:
 			# 	error.append('Please make better offer')
 			# elif offer >= minOffer:
@@ -38,22 +46,22 @@ def order_create(request):
 			# else:
 			# 	itemPrice = price
 
-			'''
-			if cart.coupon:
-				order.coupon = cart.coupon
-				order.discount = cart.counpon.discount
-				order.save()
-			'''
-			for item in cart:
-				OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
-				order.save(commit=False)
-			cart.clear()
+		'''
+		if cart.coupon:
+			order.coupon = cart.coupon
+			order.discount = cart.counpon.discount
+			order.save()
+		'''
+			# for item in cart:
+			# 	OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
+			# 	OrderItem.save()
+			# cart.clear()
 			# launch asynchronous task
 			#order_created.delay(order.id)
-			return render(request, 'orders/order/created.html', {'order': order})
-	else:
-		form = OrderCreateForm()
-	return render(request, 'orders/order/create.html', {'cart': cart, 'form': form})
+	# 		return render(request, 'orders/order/created.html', {'order': order})
+	# else:
+	# 	form = OrderCreateForm()
+	# return render(request, 'orders/order/create.html', {'cart': cart, 'form': form})
 		# order_created.delay(order.id)
 		# request.session['order_id'] = order.id
 		# return redirect(reverse('payments:process'))
