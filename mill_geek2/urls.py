@@ -28,7 +28,7 @@ urlpatterns = [
  	url(r'^cart/', include('myshop.cart.urls', namespace='cart')),  
     url(r'^orders/', include('myshop.orders.urls', namespace='orders')),
     url(r'^paypal/', include('paypal.standard.ipn.urls')),
-    url(r'^payment/', include('myshop.payment.urls', namespace='payments')),
+    url(r'^payment/', include('myshop.payment.urls', namespace='payment')),
     url(r'^coupons/', include('myshop.coupons.urls', namespace='coupons')),
     url(r'^shop/', include('myshop.shop.urls', namespace='shop')),  
 ]

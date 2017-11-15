@@ -21,7 +21,9 @@ def admin_order_pdf(request, order_id):
 	order = get_object_or_404(Order, id=order_id)
 	html = render_to_string('orders/order/pdf.html', {'order': order})
 	response = HttpResponse(content_type='application/pdf')
-	response['Content-Disposition'] = 'filename'
+	response['Content-Disposition'] = 'filename="order_{}.pdf"'.format(order.id)
+	weasyprint.HTML(string=html).write_pdf(response, stylesheeets=[weasyprint.css(settings.STATIC_ROOT + 'css/pdf.css')])
+	return response
 	
 def order_create(request):
 	cart = Cart(request)
@@ -29,40 +31,16 @@ def order_create(request):
 		form = OrderCreateForm(request.POST)
 		if form.is_valid():
 			order = form.save(commit=False)
+			if cart.coupon:
+				order.coupon = cart.coupon
+				order.discount = cart.coupon.discount
+			order.save()
 			for item in cart:
 				OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
 			cart.clear()
 			request.session['order_id'] = order.id
-			return redirect(reverse('payment:process'))
+			return redirect(reverse('payments:process'))
 	else:
 		form = OrderCreateForm()
 	return render(request, 'orders/order/create.html', {'cart': cart, 'form':form})
-			# if offer < item.minOffer:
-			# 	error.append('Please make better offer')
-			# elif offer >= minOffer:
-			# 	cost = offer
-			# if cost > item.price:
-			# 	itemPrice = cost
-			# else:
-			# 	itemPrice = price
-
-		'''
-		if cart.coupon:
-			order.coupon = cart.coupon
-			order.discount = cart.counpon.discount
-			order.save()
-		'''
-			# for item in cart:
-			# 	OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
-			# 	OrderItem.save()
-			# cart.clear()
-			# launch asynchronous task
-			#order_created.delay(order.id)
-	# 		return render(request, 'orders/order/created.html', {'order': order})
-	# else:
-	# 	form = OrderCreateForm()
-	# return render(request, 'orders/order/create.html', {'cart': cart, 'form': form})
-		# order_created.delay(order.id)
-		# request.session['order_id'] = order.id
-		# return redirect(reverse('payments:process'))
-
+		
