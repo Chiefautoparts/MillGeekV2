@@ -49,9 +49,11 @@ body {
 	position: relative;
 	top: 350px;
 	left: 75px;
+}
+.menu #imgBOX {
 	background-color: #FFFA00;
-	width: 50px;
-	height: 50px;
+	width: 100px;
+	height: 100px;
 }
 
 @keyframes crawl {

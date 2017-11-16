@@ -24,7 +24,7 @@
 			<p>Login <a href="{% url 'log_reg:login' %}">here</a></p>
 		</article>
 		<article>
-			<section class="center">
+			<section class="">
 					<p id="subcenter">****Hot new Items****</p>
 					<img src="http://www.stevensegallery.com/284/196" alt="">
 			</section>
@@ -36,17 +36,19 @@
 				<img src="http://www.stevensegallery.com/200/300" alt="">
 			</section>
 		</article>
-		<div id="post">
-			{% for post in posts %}
-				<h2>
-					{{ post.title }}
-				</h2>
-				<p class="date">
-					Published {{ post.publish }} by {{ post.author }}
-				</p class="body">
-				{{ post.body|truncatewords:30|linebreaks }}
-				{% endfor %}
-		</div>
+		<section class="center">
+			<div id="post">
+				{% for post in posts %}
+					<h2>
+						{{ post.title }}
+					</h2>
+					<p class="date">
+						Published {{ post.publish }} by {{ post.author }}
+					</p class="body">
+					{{ post.body|truncatewords:30|linebreaks }}
+					{% endfor %}
+			</div>
+		</section>
 		<article>
 			<div class="footer">
 				<a id="link" href="#">Information</a>
