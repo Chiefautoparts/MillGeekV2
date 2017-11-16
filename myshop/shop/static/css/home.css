@@ -85,3 +85,13 @@ body {
 #post p .body {
 	text-align: center;
 }
+
+.footer {
+	background-color: #000;
+}
+.footer a:link {
+	color: #fff;
+}
+.footer a:visited {
+	color: ##B1090CFF;
+}
