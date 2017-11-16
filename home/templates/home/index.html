@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="{% static 'css/home.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 </head>
 <body>
 	<main class='main'>
@@ -23,32 +24,46 @@
 			<p>Login <a href="{% url 'log_reg:login' %}">here</a></p>
 		</article>
 		<article>
-			<section class="center">
+			<section class="">
 					<p id="subcenter">****Hot new Items****</p>
 					<img src="http://www.stevensegallery.com/284/196" alt="">
 			</section>
 			<section class="right">
-				<h1>My blog</h1>
-		{% for post in posts %}
-		<h2>
-			<a href="{{ post.get_absolute_url }}">
-				{{ post.title }}
-			</a>
-		</h2>
-		<p class="date">
-			Published {{ post.published }} by {{ post.author }}
-		</p>
-		{{ post.body|truncatewords:30|linebreaks }}
-		{% endfor %}
-				<img src="http://www.stevensegallery.com/g/200/300" alt="">
+			<img src="http://www.stevensegallery.com/g/200/300" alt="">
 			</section>
 			<section class="left">
 				<p id="subleft">****Fantastic News Item*****</p>
 				<img src="http://www.stevensegallery.com/200/300" alt="">
 			</section>
 		</article>
+		<section class="center">
+			<div id="post">
+				{% for post in posts %}
+					<h2>
+						{{ post.title }}
+					</h2>
+					<p class="date">
+						Published {{ post.publish }} by {{ post.author }}
+					</p class="body">
+					{{ post.body|truncatewords:30|linebreaks }}
+					{% endfor %}
+			</div>
+		</section>
 		<article>
-			<table>
+			<div class="footer">
+				<a id="link" href="#">Information</a>
+				<a id="link" href="#">Location</a>
+				<a id="link" href="#">Company</a>
+				<a id="link" href="#">Welcome</a>
+				<a id="link" href="#">Area Map</a>
+				<a id="link" href="#">About Us</a>
+				<a id="link" href="#">Schedule</a>
+				<a id="link" href="#">Address</a>
+				<a id="link" href="#">Terms</a>
+				<a id="link" href="#">Contact Us</a>
+				<h3 id="digits">(425) 415-6666</h3>
+			</div>
+			{# <table>
 				<thead>
 					
 				</thead>
@@ -73,7 +88,7 @@
 					<td></td>
 				</tr>
 			</table>
-			<h2>425-415-6666</h2>
+			<h2>425-415-6666</h2> #}
 		</article>
 	</main>
 </body>
