@@ -23,19 +23,6 @@
 			<p>Register <a href="{% url 'log_reg:register' %}">here</a></p>
 			<p>Login <a href="{% url 'log_reg:login' %}">here</a></p>
 		</article>
-		<article>
-			<section class="">
-					<p id="subcenter">****Hot new Items****</p>
-					<img src="http://www.stevensegallery.com/284/196" alt="">
-			</section>
-			<section class="right">
-			<img src="http://www.stevensegallery.com/g/200/300" alt="">
-			</section>
-			<section class="left">
-				<p id="subleft">****Fantastic News Item*****</p>
-				<img src="http://www.stevensegallery.com/200/300" alt="">
-			</section>
-		</article>
 		<section class="center">
 			<div id="post">
 				{% for post in posts %}
@@ -49,46 +36,22 @@
 					{% endfor %}
 			</div>
 		</section>
-		<article>
-			<div class="footer">
+		<article class="footer">
+			
 				<a id="link" href="#">Information</a>
 				<a id="link" href="#">Location</a>
 				<a id="link" href="#">Company</a>
+			
 				<a id="link" href="#">Welcome</a>
 				<a id="link" href="#">Area Map</a>
 				<a id="link" href="#">About Us</a>
+			
 				<a id="link" href="#">Schedule</a>
 				<a id="link" href="#">Address</a>
 				<a id="link" href="#">Terms</a>
 				<a id="link" href="#">Contact Us</a>
 				<h3 id="digits">(425) 415-6666</h3>
-			</div>
-			{# <table>
-				<thead>
-					
-				</thead>
-				<th>
-					<td>Information</td>
-					<td>Location</td>
-					<td>Company</td>
-				</th>
-				<tr>
-					<td>Welcome</td>
-					<td>Aread Map</td>
-					<td>About Us</td>
-				</tr>
-				<tr>
-					<td>Schedule</td>
-					<td>Address</td>
-					<td>Terms</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>Contact Us</td>
-					<td></td>
-				</tr>
-			</table>
-			<h2>425-415-6666</h2> #}
+			
 		</article>
 	</main>
 </body>
