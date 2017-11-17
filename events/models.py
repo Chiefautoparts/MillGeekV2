@@ -1,14 +1,14 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-from django.contrib import admin
-from django.contrib.auth.models import User
-from django.db import models
+# # -*- coding: utf-8 -*-
+# from __future__ import unicode_literals
+# from django.contrib import admin
+# from django.contrib.auth.models import User
+# from django.db import models
 
-from oauth2client.contrib.django_util.models import CredentialsField
+# from oauth2client.contrib.django_util.models import CredentialsField
 
-class CredentialsModel(models.Model):
-	id = models.ForeignKey(User, primary_key=True)
-	credential = CredentialsField()
+# class CredentialsModel(models.Model):
+# 	id = models.ForeignKey(User, primary_key=True)
+# 	credential = CredentialsField()
 
-class CredentialsAdmin(admin.ModelAdmin):
-	pass
+# class CredentialsAdmin(admin.ModelAdmin):
+# 	pass
