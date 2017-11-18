@@ -4,19 +4,20 @@
 	<title>Mill Geek Comics</title>
 	{% load static %}
 	<link rel="stylesheet" href="../static/css/usGeeks.css">
-	<script src="{% static 'js/aboutscript.js' %}"></script>
+	<script src="../static/js/aboutscript.js"></script>
 </head>
 <body>
 	<div class="navButton">
-		<img src="{% static 'css/img/ic_menu_black_24dp_2x.png' %}" alt="">
+		<img src="../static/css/img/ic_menu_black_24dp_2x.png" alt="">
+		<div class="navBox" style="display: none">
+			<a href="{% url 'home:index' %}">Geek Home</a>
+			<a href="#">Cast Us</a>
+			<a href="{% url 'about:usGeeks' %}">Us Geek</a>
+			<a href="#">Events</a>
+			<a href="{% url 'shop:product_list' %}">Ye Merchant Shope</a>
+		</div>
 	</div>
-	<div class="navBox">
-		<a href="{% url 'home:index' %}">Geek Home</a>
-		<a href="#">Cast Us</a>
-		<a href="{% url 'about:usGeeks' %}">Us Geek</a>
-		<a href="#">Events</a>
-		<a href="{% url 'shop:product_list' %}">Ye Merchant Shope</a>
-	</div>
+	
 	<div class="fade"></div>
 	<section class="geekWars">
 		<div class="crawl">
