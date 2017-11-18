@@ -9,7 +9,7 @@ html {
 }
 
 body {
-	font-family: 'Nothing You Could Do', cursive;
+	font-family: 'Acme', sans-serif;
 	background-image: url("img/background1.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 90%;
@@ -66,11 +66,12 @@ body {
 	font-family: 'Acme', sans-serif;
 	background-color: #B0B0B0FF;
 	color: #000;
-	width: 500px;
+	width: 300px;
 	border-width: thick;
 	border-color: #000;
 	border-style: groove;
-	box-shadow: -5px -5px 3px #505058FF;	
+	box-shadow: -5px -5px 3px #505058FF;
+	padding: 7px;	
 }
 .center {
 	margin-left: 33%;
@@ -78,7 +79,7 @@ body {
 }
 
 #post h2 {
-	text-shadow: -5px -5px 2px #fff;
+	text-shadow: -3px -3px 2px #fff;
 	text-align: center;
 }
 
@@ -88,10 +89,13 @@ body {
 
 .footer {
 	background-color: #000;
+	border-style: groove;
+	border-width: thick;
+	border-color: #505050;
 }
 .footer a:link {
 	color: #fff;
 }
 .footer a:visited {
-	color: ##B1090CFF;
+	color: #B1090CFF;
 }
