@@ -55,6 +55,7 @@ body {
 }
 
 
+
 @keyframes crawl {
 	0% {
 		top: 0;
@@ -67,8 +68,3 @@ body {
 	}
 }
 
-#menu {
-	position: relative;
-	top: -250px;
-	left: 50px;
-}

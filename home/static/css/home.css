@@ -5,30 +5,31 @@
 }
 
 html {
-	background: linear-gradient(#0F5E0C, #318F39);
+	background: linear-gradient(#fff, #000);
+	/*background: linear-gradient(#c7c7c7c7, #686868);*/
 }
 
 body {
-	font-family: 'Nothing You Could Do', cursive;
+	font-family: 'Acme', sans-serif;
 	background-image: url("img/background1.jpg");
 	background-repeat: no-repeat;
-	background-size: 100% 90%;
+	background-size: 88% 50%;
 	background-attachment: fixed;
 	background-position: top;
-	margin: 0;
 	color: #f2f2f2;
+
 }
 
-
 .main article img {
-	margin: 50;
+	margin-top: 65px;
+	margin-left: 150px;
 }
 
 .topNav {
 	border-style: ridge;
 	border-color: #2f2f2f;
 	border-size: 7px;
-	margin-left: 80px;
+	margin-left: 110px;
 	background-color: #2C6840FF;
 	overflow: hidden;
 	font-family: 'Source Code Pro', monospace;
@@ -56,6 +57,10 @@ body {
 	color: #fff;
 }
 
+#logreg {
+	margin-left: 120px;
+}
+
 .right {
 	float: right;
 	clear: both;
@@ -63,14 +68,16 @@ body {
 
 
 #post {
+	position: relative;
+	left: -300px;
 	font-family: 'Acme', sans-serif;
 	background-color: #B0B0B0FF;
 	color: #000;
-	width: 300px;
+	width: 500px;
 	border-width: thick;
 	border-color: #000;
 	border-style: groove;
-	box-shadow: -5px -5px 3px #505058FF;
+	box-shadow: -4px -4px 3px #505058FF;
 	padding: 7px;	
 }
 .center {
@@ -78,7 +85,8 @@ body {
 	text-align: center;
 }
 
-#post h2 {
+#post #title {
+	font-size: 28px;
 	text-shadow: -3px -3px 2px #fff;
 	text-align: center;
 }
@@ -89,6 +97,9 @@ body {
 
 .footer {
 	background-color: #000;
+	border-style: groove;
+	border-width: thick;
+	border-color: #505050;
 }
 .footer a:link {
 	color: #fff;

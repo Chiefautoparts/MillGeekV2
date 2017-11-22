@@ -32,7 +32,7 @@ body {
 	position: relative;
 	top: 9999px;
 	transform-origin: 50% 100%;
-	animation: crawl 50s linear;
+	animation: crawl 120s linear;
 }
 
 .crawl > .title {
@@ -44,6 +44,16 @@ body {
 	margin: 0 0 100px;
 	text-transform: uppercase;
 }
+
+#menu {
+	position: relative;
+	top: 350px;
+	left: 75px;
+	background-color: #FFFA00;
+	width: 50px;
+	height: 50px;
+}
+
 
 @keyframes crawl {
 	0% {
@@ -57,8 +67,3 @@ body {
 	}
 }
 
-#menu {
-	position: relative;
-	top: -250px;
-	left: 50px;
-}
