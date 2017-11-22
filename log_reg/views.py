@@ -14,29 +14,30 @@ def regPage(request):
 
 def login(request):
 	print '***login***' * 100
-	status = User.objects.loginUser(request.POST)
-
-	if not status['valid']:
-		for error in status['errors']:
+	results = User.objects.loginUser(request.POST)
+	if results['status'] is False:
+		for error in results['errors']:
 			messages.error(request, error)
-			return redirect('log_reg:logPage')
+		return redirect('log_reg:logPage')
 	else:
 		user = User.objects.get(id=results['user'])
 		request.session['id'] = user.id
-	return redirect('log_reg:userLogged')
+	return redirect('log_reg:UserHome')
 
 def register(request):
 	print '***register***' * 1000
-	status = User.objects.authUser(request.POST)
-
-	if not status['valid']:
-		for error in status['errors']:
+	results = User.objects.registerUser(request.POST)
+	if not results['status']:
+		for error in results['errors']:
 			messages.error(request, error)
 			return redirect('log_reg:regPage')
-	else:
-		user = User.objects.get(id=results['user'])
-		request.session['id'] = user.id
-	return redirect('log_reg:userLogged')
+	request.session['id'] = results['user'].id
+	return redirect('log_reg:UserHome')
+	
 
-def userLogged(request):
-	return redirect('home:index')
+def UserHome(request):
+	user = User.objects.get(id=request.session.get('id'))
+	context = {
+		'user': user
+	}
+	return redirect('log_reg:home')

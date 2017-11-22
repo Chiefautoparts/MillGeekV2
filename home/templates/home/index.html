@@ -19,14 +19,16 @@
 				<a href="#">Events</a>
 				<a href="{% url 'shop:product_list' %}">Ye Merchant Shope</a>
 			</div>
-			<p>Are you a member of our Secret Club Yet?</p>
-			<p>Register <a href="{% url 'log_reg:register' %}">here</a></p>
-			<p>Login <a href="{% url 'log_reg:login' %}">here</a></p>
+			<div id="logreg">
+				<p>Are you a member of our Secret Club Yet?</p>
+				<p>Register <a href="{% url 'log_reg:register' %}">here</a></p>
+				<p>Login <a href="{% url 'log_reg:login' %}">here</a></p>
+			</div>
 		</article>
 		<section class="center">
 			<div id="post">
 				{% for post in posts %}
-					<h2>
+					<h2 id="title">
 						{{ post.title }}
 					</h2>
 					<p class="date">

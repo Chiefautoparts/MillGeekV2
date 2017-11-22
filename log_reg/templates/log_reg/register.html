@@ -1,27 +1,21 @@
-{% extends "home/homebase.html" %}
-{% load static %}
-
-{% block title %}
-	<h2>Register for quicker checkouts, Event Notifactions and Sweet Deals!</h2>
-{% endblock %}
-
-{% block content %}
-	<form action="{% url "log_reg:register" %}">
-		{% csrf_token %}
-		<label for="first_name">First Name: </label>
-		<input type="text" name="first_name">
-		<label for="last_name">Last Name: </label>
-		<input type="text" name="last_name">
-		<label for="username">Username: </label>
-		<input type="text" name="username">
-		<label for="email">Email: </label>
-		<input type="text" name="email">
-		<label for="age">Age: </label>
-		<input type="number" name="dob">
-		<label for="password">Password: </label>
-		<input type="password" name="password">
-		<label for="confpassword">Confirm Password: </label>
-		<input type="password" name="confpassword">
-		<input type="submit" name="submit" value="Register">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Mill Geek Comics</title>
+	<link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+	<h1>Register below for the rewards program</h1>
+	<form action="{% url 'log_reg:register' %}" method="POST">
+		<input type="text" name="first_name" placeholder="First Name">
+		<input type="text" name="last_name" placeholder="Last Name">
+		<input type="text" name="username" placeholder="Username">
+		<input type="text" name="email" placeholder="Email">
+		<input type="number" name="age" placeholder="Age">
+		<input type="password" name="password" placeholder="Password">
+		<input type="password" name="confirm_password" placeholder="Confirm Password">
+		<input type="submit" name="submit" value="Register User">
 	</form>
-{% endblock %}
+
+</body>
+</html>

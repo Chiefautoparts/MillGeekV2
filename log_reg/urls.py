@@ -7,5 +7,5 @@ urlpatterns = [
 	url(r'^register/$', views.register, name="register"),
 	url(r'^logPage$', views.logPage, name="logPage"),
 	url(r'^regPage$', views.regPage, name="regPage"),
-	url(r'^userLogged$', views.userLogged, name="userLogged")
+	url(r'^UserHome$', views.UserHome, name="UserHome"),
 ]

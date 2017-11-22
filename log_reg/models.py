@@ -1,86 +1,84 @@
-# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
-from django.db import models
-import bcrypt
 import re
-from datetime import datetime
-
+import bcrypt
+from django.db import models
 
 class UserManager(models.Manager):
-	def authUser(self, postData):
-		status = {'valid':True, 'errors':[], 'user':None}
-		if not postData['first_name'] or len(postData['first_name']) < 3:
-			status['valid'] = False
-			status['errors'].append('Must be more than 3 characters long')
-		if not postData['last_name'] or len(postData['last_name']) < 3:
-			status['valid'] = False
-			status['errors'].append('Must be more than 3 characters in length')
-		if not postData['username'] or len(postData['username']) < 3:
-			status['valid'] = False
-			status['errors'].append('Please pick a more Awesomer usernam than that. I know you can do better')
-		if not re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", postData['email']):
-			status['valid'] = False
-			status['errors'].append('Fake Email. Please use valid email format')
-		if not postData['age'] or postData['age'] < 13:
-			status['valid'] = False
-			status['errors'].append('You need parents permission to register')
+	def registerUser(self, postData):
+		results = {'status': True, 'errors': [], 'user': None}
+		if not postData['first_name']:
+			results['status'] = False
+			results['errors'].append('You must enter your first name.')
+		if not postData['last_name']:
+			results['status'] = False
+			results['errors'].append('Enter your last name too')
+		if not postData['username']:
+			results['status'] = False
+			results['errors'].append('Make a username to keep your identity secret from the evil powers at large')
+		if not postData['email'] or not re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", postData['email']):
+			results['status'] = False
+			results['errors'].append('Enter a valid email')
+		if not postData['age'] > 10:
+			results['status'] = False
+			results['errors'].append('Go back to the disney channel you child')
 		if not postData['password'] or len(postData['password']) < 8:
-			status['valid'] = False
-			status['errors'].append('Password cannot be less than 8 characters')
-		if postData['confPassword'] != postData['password']:
-			status['valid'] = False
-			status['errors'].append('Passwords Do Not Match. Dumbass')
-		if status['valid'] is False:
-			return status
+			results['status'] = False
+			results['errors'].append('Password must be greater than 8 characters')
+		if postData['confirm_password'] != postData['password']:
+			results['status'] = False
+			results['errors'].append('passwords do not match..... idiot')
+		if results['status'] is False:
+			return results
 
 		user = User.objects.filter(username=postData['username'])
 
 		if user:
-			status['valid'] = False
-			status['errors'].append('All systems Failure. Could not register User')
+			results['status'] = False
+			results['errors'].append('You done didn\'t do something correctly')
 
 		if results['status']:
-			passWord = bcrypt.hashpw(postData['password'].encode(), bcrypt.gensalt())
+			passwerd = bcrypt.hashpw(postData['password'].encode(), bcrypt.gensalt())
 			user = User.objects.create(
-				first_name=postData['first_name'],
-				last_name=postData['last_name'],
-				username=postData['username'],
-				email=postData['email'],
-				age=postData['age'],
-				password=passWord)
+										first_name = postData['first_name'],
+										last_name = postData['last_name'],
+										username = postData['username'],
+										email = postData['email'],
+										age = postData['age'],
+										password = passwerd
+										)
+			user.save()
+			results['user'] = user
+		return results
 
 	def loginUser(self, postData):
-		status = {'valid':True, 'errors':[], 'user':None}
-		user = User.objects.filter(username=postData['username'])
+		results = {'status': True, 'errors': [], 'user': None}
+		user = User.objects.filter(username = postData['username'])
 
 		try:
 			user
-		except IndexError as e:
-			status['valid'] = False
-			status['errors'].append('Username or password is not corrent')
+
+		except IndexError:
+			results['status'] = False
+			results['errors'].append('unable to log in user')
 
 		if user[0]:
 			if user[0].password != bcrypt.hashpw(postData['password'].encode(), user[0].password.encode()):
-				status['valid'] = False
-				status['errors'].append('Something has gone horrifically wrong.')
+				results['status'] = False
+				results['errors'].append('Username or password is inncorrect. The FBI has been notified')
 			else:
-				status['user'] = user[0].id
+				results['user'] = uiser[0].id
 		else:
-			status['valid'] = False
-		return status
+			resutls['status'] = False
+		return results
 
 class User(models.Model):
 	first_name = models.CharField(max_length=100)
 	last_name = models.CharField(max_length=100)
-	username = models.CharField(max_length=150)
-	email = models.CharField(max_length=100)
-	dob = models.DateTimeField()
+	username = models.CharField(max_length=100, unique=True)
+	email = models.CharField(max_length=200)
+	age = models.IntegerField(default=25)
 	password = models.CharField(max_length=100)
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 
 	objects = UserManager()
-
-	def __str__(self):
-		return self.username + self.id
