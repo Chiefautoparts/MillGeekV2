@@ -61,6 +61,10 @@ body {
 	margin-left: 120px;
 }
 
+#logreg a {
+	color: #00FF00FF;
+}
+
 .right {
 	float: right;
 	clear: both;

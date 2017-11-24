@@ -32,7 +32,7 @@ def register(request):
 			messages.error(request, error)
 			return redirect('log_reg:regPage')
 	request.session['id'] = results['user'].id
-	return redirect('log_reg:UserHome')
+	return redirect('log_reg:logPage')
 	
 
 def UserHome(request):
