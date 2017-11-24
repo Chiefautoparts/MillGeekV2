@@ -2,10 +2,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mill Geek Comics</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/user.css' %}">
 </head>
 <body>
 	<div id="header">
-		<img src="static/img/millgeeklogo.png" alt="">
+		<img src="{% static 'img/millgeeklogo.png' %}" alt="">
+		<h2>Welcome {{ user.username }}</h2>
 	</div>
+	<section>
+		<p>Current rewards: **rewards</p>
+	</section>
 </body>
 </html>
