@@ -35,6 +35,7 @@ def register(request):
 	return redirect('log_reg:logPage')
 	
 
+
 def UserHome(request):
 	user = User.objects.get(id=request.session.get('id'))
 	context = {
