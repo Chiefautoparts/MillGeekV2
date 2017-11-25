@@ -41,4 +41,4 @@ def UserHome(request):
 	context = {
 		'user': user
 	}
-	return redirect('log_reg:home')
+	return redirect('log_reg:UserHome')
