@@ -37,14 +37,14 @@ class UserManager(models.Manager):
 			results['errors'].append('You done didn\'t do something correctly')
 
 		if results['status']:
-			passwerd = bcrypt.hashpw(postData['password'].encode(), bcrypt.gensalt())
+			HP = bcrypt.hashpw(postData['password'].encode(), bcrypt.gensalt())
 			user = User.objects.create(
 										first_name = postData['first_name'],
 										last_name = postData['last_name'],
 										username = postData['username'],
 										email = postData['email'],
 										age = postData['age'],
-										password = passwerd
+										password = HP
 										)
 			user.save()
 			results['user'] = user
@@ -66,7 +66,7 @@ class UserManager(models.Manager):
 				results['status'] = False
 				results['errors'].append('Username or password is inncorrect. The FBI has been notified')
 			else:
-				results['user'] = uiser[0].id
+				results['user'] = user[0].id
 		else:
 			resutls['status'] = False
 		return results
@@ -74,7 +74,7 @@ class UserManager(models.Manager):
 class User(models.Model):
 	first_name = models.CharField(max_length=100)
 	last_name = models.CharField(max_length=100)
-	username = models.CharField(max_length=100, unique=True)
+	username = models.CharField(max_length=100)
 	email = models.CharField(max_length=200)
 	age = models.IntegerField(default=25)
 	password = models.CharField(max_length=100)

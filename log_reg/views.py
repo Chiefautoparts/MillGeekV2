@@ -32,12 +32,13 @@ def register(request):
 			messages.error(request, error)
 			return redirect('log_reg:regPage')
 	request.session['id'] = results['user'].id
-	return redirect('log_reg:UserHome')
+	return redirect('log_reg:logPage')
 	
+
 
 def UserHome(request):
 	user = User.objects.get(id=request.session.get('id'))
 	context = {
 		'user': user
 	}
-	return redirect('log_reg:home')
+	return redirect('log_reg:UserHome')
