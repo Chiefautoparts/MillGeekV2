@@ -26,12 +26,15 @@
 		</article>
 		<section class="center">
 			<div id="post">
-				{% for post in posts %}
+				{% for post in mtg.entries %}
 					<h2 id="title">
 						{{ post.title }}
 					</h2>
 					<p class="date">
+						{{ mtg.feed.title }}
+						{{ mtg.feed.image }}
 						Published {{ post.publish }} by {{ post.author }}
+						}
 					</p class="body">
 					{{ post.body|truncatewords:30|linebreaks }}
 					{% endfor %}
