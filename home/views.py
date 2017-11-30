@@ -5,6 +5,10 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 from .models import Post
 import feedparser
+import requests
+from bs4 import BeautifulSoup
+
+with open("https://magic.wizards.com/en/rss/rss.xml?tags=Daily%20MTG&lang=en") as fp:
 
 #def post_list(request):
 #	posts = Post.published.all()
@@ -33,3 +37,5 @@ def post_detail(request, year, month, day, post):
 def rss_feed(request):
 	mtg = feedparser.parse("https://magic.wizards.com/en/rss/rss.xml")
 
+
+def magic_news()
