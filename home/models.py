@@ -6,45 +6,32 @@ from django.db.models.signals import pre_delete
 from django.dispatch import receiver
 #from scrapy_djangoitem import DjangoItem 
 from dynamic_scraper.models import Scraper, SchedulerRuntime
+from scrapy_djangoitem import DjangoItem
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
-class WizardWebsite(models.Model):
-	name = models.CharField(max_length=200)
+class MTGFeed(models.Model):
+	name =models.CharField(max_length=200)
 	url = models.URLField()
 	scraper = models.ForeignKey(Scraper, blank=True, null=True, on_delete=models.SET_NULL)
-	scraper_runtime = models.ForeignKey(SchedulerRunTime, blank=True, null=True, on_delete=models.SET_NULL)
+	scraper_runtime = models.ForeignKey(SchedulerRuntime, blank=True, null=True, on_delete=models.SET_NULL)
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.name
 
 class Article(models.Model):
 	title = models.CharField(max_length=200)
-	news_website = models.ForeignKey(WizardWebsite)
-	describe = models.TextField(blank=True)
-	url = models.URLField(blank=True)
-	thumbnail = models.CharField(max_length=200, blank=True)
+	mtgfeed = models.ForeignKey(MTGFeed)
+	description = models.TextField()
+	url = models.URLField()
 	checker_runtime = models.ForeignKey(SchedulerRuntime, blank=True, null=True, on_delete=models.SET_NULL)
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.title
 
 class ArticleItem(DjangoItem):
 	django_model = Article
-
-@receiver(pre_delete)
-def pre_delete_handler(sender, instance, using, **kwargs):
-	if isinstance(instance, WizardWebsite):
-		if instance.scraper_runtime:
-			instance.scraper_runtime.delete()
-
-	if isinstance(instance, Article):
-		if instance.checker_runtime:
-			instance.checker_runtime.delete()
-
-pre_delete.connect(pre_delete_handler)
-
 
 class PublishedManager(models.Manager):
 	def get_queryset(self):
@@ -59,6 +46,7 @@ class Post(models.Model):
 	slug = models.SlugField(max_length=100, unique_for_date='publish')
 	author = models.ForeignKey(User, related_name='blog_post')
 	body = models.TextField()
+	image = models.ImageField(upload_to='static/img/', blank=True)
 	publish = models.DateTimeField(default=timezone.now)
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
