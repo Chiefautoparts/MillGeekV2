@@ -32,13 +32,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'wordpress_api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admindocs',
+    'kombu.transport.django',
     'dynamic_scraper',
     'djcelery',
     'home',
@@ -138,6 +139,18 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'myshop/shop/static/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# Django-celery settings
+import djcelery
+djcelery.setup_loader()
+
+BROKER_HOST = "localhost"
+BROKER_PORT = 8000
+BROKER_BACKEND = "django"
+BROKER_USER = "guest"
+BROKER_PASSWORD = "temp"
+BROKER_VHOST = "/"
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
 # CELERY_BROKER_URL = 'amqp://localhost'
 
