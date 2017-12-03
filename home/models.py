@@ -23,7 +23,7 @@ class MTGFeed(models.Model):
 class Article(models.Model):
 	title = models.CharField(max_length=200)
 	mtgfeed = models.ForeignKey(MTGFeed)
-	description = models.TextField()
+	description = models.TextField(blank=True)
 	url = models.URLField()
 	checker_runtime = models.ForeignKey(SchedulerRuntime, blank=True, null=True, on_delete=models.SET_NULL)
 
@@ -32,6 +32,15 @@ class Article(models.Model):
 
 class ArticleItem(DjangoItem):
 	django_model = Article
+
+@receiver(pre_delete)
+def pre_delete_handler(sender, instance, using, **kwargs):
+
+	if isinstance(instance, Article):
+		if instance.checker_runtime:
+			instance.checker_runtime.delete()
+
+pre_delete.connect(pre_delete_handler)
 
 class PublishedManager(models.Manager):
 	def get_queryset(self):
