@@ -35,6 +35,9 @@ class ArticleItem(DjangoItem):
 
 @receiver(pre_delete)
 def pre_delete_handler(sender, instance, using, **kwargs):
+	if isinstance(instance, MTGFeed):
+		if instance.scraper_runtime:
+			instance.scraper_runtime.delete()
 
 	if isinstance(instance, Article):
 		if instance.checker_runtime:
