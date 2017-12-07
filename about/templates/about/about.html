@@ -5,6 +5,9 @@
 	{% load static %}
 	<link rel="stylesheet" href="../static/css/usGeeks.css">
 	<script src="../../static/js/aboutscript.js" type="text/javascript"></script>
+	<script>
+		var nav = document.getElementByClassName('nav-menu')
+	</script>
 </head>
 <body>
 	<div id="navButton">
@@ -29,6 +32,24 @@
 			<p>Russ and everyone that works here at the shop have been geeks their entire life! We celebrate all that is geek and are always eager to meet others that share our interests. Mill Geek Comics is a haven for geeks! Please come by the shop and see for yourself what an inviting place it is.</p><br>
 			<p>Please get in touch with us if you have any questions about our events, buying or selling items. We always welcome your calls, emails, and shop visits. Don’t forget to ask about getting your very own subscription box with us!</p>
 		</div>
+	</section>
+	<section>
+		<a href="/" class='home'>
+			<img src="homeImg.png" alt="">
+		</a>
+				<nav class='nav-menu' style="">
+			<ul>
+				<li>
+					<a href="/">Home Page</a>
+				</li>
+				<li>
+					<a href="{% url 'shop:product_list' %}">Shop</a>
+				</li>
+				<li>
+					<a href="{% url 'cart:cart_detail' %}">Cart</a>
+				</li>
+			</ul>
+		</nav>
 	</section>
 </body>
 </html>
