@@ -2,11 +2,10 @@
 from __future__ import unicode_literals
 
 from django.db import models
+
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
-
-
 
 
 class PublishedManager(models.Manager):
@@ -22,6 +21,7 @@ class Post(models.Model):
 	slug = models.SlugField(max_length=100, unique_for_date='publish')
 	author = models.ForeignKey(User, related_name='blog_post')
 	body = models.TextField()
+	image = models.ImageField(upload_to='static/img/', blank=True)
 	publish = models.DateTimeField(default=timezone.now)
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
