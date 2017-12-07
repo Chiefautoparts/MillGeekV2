@@ -84,6 +84,7 @@ body {
 	box-shadow: -4px -4px 3px #505058FF;
 	padding: 7px;	
 }
+
 .center {
 	margin-left: 33%;
 	text-align: center;
@@ -105,9 +106,16 @@ body {
 	border-width: thick;
 	border-color: #505050;
 }
+
 .footer a:link {
 	color: #fff;
 }
+
 .footer a:visited {
 	color: #B1090CFF;
+}
+
+#widgetmain {
+	text-align: center;
+	border-style: ridge;
 }
