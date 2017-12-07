@@ -4,15 +4,9 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 from .models import Post
-#import feedparser
-#import requests
-import urllib2
-from bs4 import BeautifulSoup
 
 def post_list(request):
-	quote_page = 'https://magic.wizards.com/en/rss/rss.xml?tags=Daily%20MTG&lang=en'
-	page = urllib2.urlopen(quote_page)
-	soup = BeautifulSoup(page, 'html5lib')
+	
 	return render(request, 'home/index.html')
 
 
