@@ -4,8 +4,16 @@
 	<title>Mill Geek Comics</title>
 	{% load static %}
 	<link rel="stylesheet" href="../static/css/usGeeks.css">
-	<script src="../../static/js/aboutscript.js" type="text/javascript"></script>
-	<script src="../../static/js/endScript.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="../static/css/js/aboutus.js"></script>
+	<script>
+	$('#btn-wrap').click(function(){
+		if($('#mid-blue').hasClass('asctive')){
+			$('#mid-blue, #icon, .nav-btn, #bg-disc').removeClass('active');
+		} else {
+			$('#mid-blue, #icon, .nav-btn, #bg-disc').addClass('activeopening').removeClass('opening');
+		}
+	});</script>
 </head>
 <body>
 	<div id="navButton">
@@ -31,11 +39,21 @@
 			<p>Please get in touch with us if you have any questions about our events, buying or selling items. We always welcome your calls, emails, and shop visits. Don’t forget to ask about getting your very own subscription box with us!</p>
 		</div>
 	</section>
-	<section>
-		<a href="/" class='home'>
-			<img src="homeImg.png" alt="">
-		</a>
-				<nav class='nav-menu' style="">
+	<div id="nav-container">
+		<div id="nav-wrapper">
+			<div id="bg-disc"></div>
+			<div class="nav-btn" id="photos">Photos<span>&#x25b8;</span></div>
+			<div class="nav-btn" id="videos">Videos<span>&#x25b8;</span></div>
+			<div class="nav-btn" id="extras">Extras<span>&#x25b8;</span></div>
+			<div id="bottom-blue"></div>
+			<div id="btn-wrap">
+				<div id="mid-blue"></div>
+				<div id="icon"></div>
+			</div>
+		</div>
+	</div>
+	{# <section id="left-sidebar">
+		<nav class='nav-menu' style="">
 			<ul>
 				<li>
 					<a href="/">Home Page</a>
@@ -48,6 +66,6 @@
 				</li>
 			</ul>
 		</nav>
-	</section>
+	</section> #}
 </body>
 </html>
