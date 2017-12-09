@@ -4,21 +4,12 @@
 	<title>Mill Geek Comics</title>
 	{% load static %}
 	<link rel="stylesheet" href="../static/css/usGeeks.css">
-	<script src="../../static/js/aboutscript.js" type="text/javascript"></script>
-	<script src="../../static/js/endScript.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://use.fontawesome.com/4d0cb8d848.js"></script>
+	<script src="../static/css/js/aboutus.js"></script>
 </head>
 <body>
-	<div id="navButton">
-		<img src="../static/css/img/ic_menu_black_24dp_2x.png" alt="">
-		<div id="navBox" style="display: none">
-			<a href="{% url 'home:index' %}">Geek Home</a>
-			<a href="#">Cast Us</a>
-			<a href="{% url 'about:usGeeks' %}">Us Geek</a>
-			<a href="#">Events</a>
-			<a href="{% url 'shop:product_list' %}">Ye Merchant Shope</a>
-		</div>
-	</div>
-	
+
 	<div class="fade"></div>
 	<section class="geekWars">
 		<div class="crawl">
@@ -32,22 +23,10 @@
 		</div>
 	</section>
 	<section>
-		<a href="/" class='home'>
-			<img src="homeImg.png" alt="">
-		</a>
-				<nav class='nav-menu' style="">
-			<ul>
-				<li>
-					<a href="/">Home Page</a>
-				</li>
-				<li>
-					<a href="{% url 'shop:product_list' %}">Shop</a>
-				</li>
-				<li>
-					<a href="{% url 'cart:cart_detail' %}">Cart</a>
-				</li>
-			</ul>
-		</nav>
+		 
+        <div id="navBox">
+        	<a href="{% url 'home:index' %}">Home</a>
+        </div>
 	</section>
 </body>
 </html>

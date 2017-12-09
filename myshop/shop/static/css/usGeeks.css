@@ -32,7 +32,7 @@ body {
 	position: relative;
 	top: 9999px;
 	transform-origin: 50% 100%;
-	animation: crawl 120s linear;
+	animation: crawl 50s linear;
 }
 
 .crawl > .title {
@@ -45,14 +45,7 @@ body {
 	text-transform: uppercase;
 }
 
-#menu {
-	position: relative;
-	top: 350px;
-	left: 75px;
-	background-color: #FFFA00;
-	width: 50px;
-	height: 50px;
-}
+
 
 
 @keyframes crawl {
@@ -67,3 +60,15 @@ body {
 	}
 }
 
+
+#navBox {
+  position: fixed;
+  top: 380px;
+  left: 75px;
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  display: block;
+  margin: 20px;
+  cursor: pointer;
+}
