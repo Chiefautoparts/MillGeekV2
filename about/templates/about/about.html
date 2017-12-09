@@ -5,28 +5,11 @@
 	{% load static %}
 	<link rel="stylesheet" href="../static/css/usGeeks.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://use.fontawesome.com/4d0cb8d848.js"></script>
 	<script src="../static/css/js/aboutus.js"></script>
-	<script>
-	$('#btn-wrap').click(function(){
-		if($('#mid-blue').hasClass('asctive')){
-			$('#mid-blue, #icon, .nav-btn, #bg-disc').removeClass('active');
-		} else {
-			$('#mid-blue, #icon, .nav-btn, #bg-disc').addClass('activeopening').removeClass('opening');
-		}
-	});</script>
 </head>
 <body>
-	<div id="navButton">
-		<img src="../static/css/img/ic_menu_black_24dp_2x.png" alt="">
-		<div id="navBox" style="display: none">
-			<a href="{% url 'home:index' %}">Geek Home</a>
-			<a href="#">Cast Us</a>
-			<a href="{% url 'about:usGeeks' %}">Us Geek</a>
-			<a href="#">Events</a>
-			<a href="{% url 'shop:product_list' %}">Ye Merchant Shope</a>
-		</div>
-	</div>
-	
+
 	<div class="fade"></div>
 	<section class="geekWars">
 		<div class="crawl">
@@ -39,33 +22,11 @@
 			<p>Please get in touch with us if you have any questions about our events, buying or selling items. We always welcome your calls, emails, and shop visits. Don’t forget to ask about getting your very own subscription box with us!</p>
 		</div>
 	</section>
-	<div id="nav-container">
-		<div id="nav-wrapper">
-			<div id="bg-disc"></div>
-			<div class="nav-btn" id="photos">Photos<span>&#x25b8;</span></div>
-			<div class="nav-btn" id="videos">Videos<span>&#x25b8;</span></div>
-			<div class="nav-btn" id="extras">Extras<span>&#x25b8;</span></div>
-			<div id="bottom-blue"></div>
-			<div id="btn-wrap">
-				<div id="mid-blue"></div>
-				<div id="icon"></div>
-			</div>
-		</div>
-	</div>
-	{# <section id="left-sidebar">
-		<nav class='nav-menu' style="">
-			<ul>
-				<li>
-					<a href="/">Home Page</a>
-				</li>
-				<li>
-					<a href="{% url 'shop:product_list' %}">Shop</a>
-				</li>
-				<li>
-					<a href="{% url 'cart:cart_detail' %}">Cart</a>
-				</li>
-			</ul>
-		</nav>
-	</section> #}
+	<section>
+		 
+        <div id="navBox">
+        	<a href="{% url 'home:index' %}">Home</a>
+        </div>
+	</section>
 </body>
 </html>

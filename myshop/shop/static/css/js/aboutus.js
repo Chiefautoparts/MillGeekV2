@@ -1,7 +1,19 @@
-$('#btn-wrap').click(function(){
-	if($('#mid-blue').hasClass('asctive')){
-		$('#mid-blue, #icon, .nav-btn, #bg-disc').removeClass('active');
-	} else {
-		$('#mid-blue, #icon, .nav-btn, #bg-disc').addClass('activeopening').removeClass('opening');
-	}
-});
+'use strict';
+
+var navBox = document.getElementById('nav-box');
+var navBtn = document.getElementById('nav-Btn');
+
+function showNav(){
+	
+	navBox.style.display = 'none';
+	navBtn.addEventListener('click', displayBox);
+
+	function displayBox() {
+		if (navBox.style.display === 'none') {
+			navBox.setAttribute('style', 'display: block')
+		}
+		else {
+			navBox.style.display = 'none';
+		}
+	};
+}
