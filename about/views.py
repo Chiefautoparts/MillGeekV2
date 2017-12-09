@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 
 # Create your views here.
-def index(request):
+def usGeeks(request):
 	return render(request, 'about/about.html')
 
-def basic(request):
+def index(request):
 	return render(request, 'about/classicUs.html')
