@@ -1,0 +1,16 @@
+body {
+	background-color: #BEBEBEFF;
+	color: #090909;
+}
+h1 {
+	text-align: center;
+	border: 5px ridge #9090;
+	margin: 25px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+h4 {
+
+}

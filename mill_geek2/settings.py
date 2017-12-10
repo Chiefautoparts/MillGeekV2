@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admindocs',
     'home',
+    'contact',
     'log_reg',
     'paypal.standard.ipn',
     'myshop.payment',

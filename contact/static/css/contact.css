@@ -1,0 +1,31 @@
+body {
+	background-color: #919191FF;
+	color: #000;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+#map {
+	height: 400px;
+	width: 400px;
+	border: 7px groove rgb(102, 102, 102);
+}
+
+.nav {
+	position: relative;
+	left: 650px;
+	top: -100px;
+}
+
+#footer {
+	display: block;
+	border: 5px groove #003E00FF;
+}
+
+#footer p {
+	font-size: 18px;
+	text-align: center;
+}
+

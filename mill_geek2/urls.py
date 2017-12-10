@@ -23,6 +23,7 @@ urlpatterns = [
  	url(r'^', include('home.urls', namespace='home')),
     #url(r'^blog/', include('blog.urls', namespace='blog', app_name='blog')),
  	url(r'^log_reg/', include('log_reg.urls', namespace='log_reg')),
+    url(r'^castus/', include('contact.urls', namespace='castUs')),
     url(r'^about/', include('about.urls', namespace='about')),
  	url(r'^cart/', include('myshop.cart.urls', namespace='cart')),  
     url(r'^orders/', include('myshop.orders.urls', namespace='orders')),
