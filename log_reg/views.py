@@ -13,7 +13,7 @@ def regPage(request):
 	return render(request, 'log_reg/register.html')
 
 def login(request):
-	print '***login***' * 100
+	
 	results = User.objects.loginUser(request.POST)
 	if results['status'] is False:
 		for error in results['errors']:
@@ -25,7 +25,7 @@ def login(request):
 	return redirect('log_reg:UserHome')
 
 def register(request):
-	print '***register***' * 1000
+	
 	results = User.objects.registerUser(request.POST)
 	if not results['status']:
 		for error in results['errors']:
@@ -41,4 +41,4 @@ def UserHome(request):
 	context = {
 		'user': user
 	}
-	return redirect('log_reg:UserHome')
+	return render(request, 'log_reg/userPage.html')

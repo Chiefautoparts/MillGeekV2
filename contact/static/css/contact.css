@@ -1,0 +1,15 @@
+body {
+	background-color: #919191FF;
+	color: #000;
+}
+
+#map {
+	height: 400px;
+	width: 100%;
+	border: 5px ridge #000;
+}
+
+p {
+	font-size: 2em;
+}
+
