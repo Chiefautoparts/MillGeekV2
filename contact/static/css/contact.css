@@ -4,16 +4,28 @@ body {
 }
 
 h2 {
-	font-size: 28px;
+	font-size: 36px;
 }
 
 #map {
 	height: 400px;
-	width: 100%;
-	border: 5px ridge #000;
+	width: 400px;
+	border: 7px groove rgb(102, 102, 102);
 }
 
-p {
-	font-size: 22px;
+.nav {
+	position: relative;
+	left: 650px;
+	top: -100px;
+}
+
+#footer {
+	display: block;
+	border: 5px groove #003E00FF;
+}
+
+#footer p {
+	font-size: 18px;
+	text-align: center;
 }
 
