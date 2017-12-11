@@ -3,25 +3,28 @@
 	<meta charset="UTF-8">
 	<title>Mill Geek Comics</title>
 	{% load static %}
-	<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+	<link rel="stylesheet" href="{% static 'css/contact-grid.css' %}">
 	<script src="{% static 'js/contact.js' %}"></script>
 	
 </head>
 <body>
 	<h2>Contact Us</h2>
+	<section class="header">
+		<div class="nav">
+			<a href="{% url 'home:index' %}">Home</a>
+			<a href="{% url 'shop:product_list' %}">Shop</a>
+			<a href="{% url 'cart:cart_detail' %}">Cart</a>
+		</div>
+	</section>
 	<section class="grid-view">
-		<article class="map-view">
+		<article class="map">
 			<div id="map"></div>
 		</article>
-		<article class="nav-view">
-			<div class="nav">
-				<a href="{% url 'home:index' %}">Home</a>
-				<a href="{% url 'shop:product_list' %}">Shop</a>
-				<a href="{% url 'cart:cart_detail' %}">Cart</a>
-			</div>
+		<article class="contact-form">
+			
 		</article>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtkvEAOY8CXn1JMbPqu3NZjzXOxqLoLK4&callback=initMap"></script>
-		<acticle class="horizontal-footer">
+		<acticle class="footer">
 			<div id="footer">
 				<p>Need help locating us?</p>
 				<p>Give Us A Call At (phone number)</p>
