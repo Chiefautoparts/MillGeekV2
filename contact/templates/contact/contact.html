@@ -9,18 +9,25 @@
 </head>
 <body>
 	<h2>Contact Us</h2>
-	<div id="map"></div>
-	
-	<div class="nav">
-		<a href="{% url 'home:index' %}">Home</a>
-		<a href="{% url 'shop:product_list' %}">Shop</a>
-		<a href="{% url 'cart:cart_detail' %}">Cart</a>
-	</div>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtkvEAOY8CXn1JMbPqu3NZjzXOxqLoLK4&callback=initMap"></script>
-	<div id="footer">
-		<p>Need help locating us?</p>
-		<p>Give Us A Call At (phone number)</p>
-		<p>We'll help guide you to our store</p>
-	</div>
+	<section class="grid-view">
+		<article class="map-view">
+			<div id="map"></div>
+		</article>
+		<article class="nav-view">
+			<div class="nav">
+				<a href="{% url 'home:index' %}">Home</a>
+				<a href="{% url 'shop:product_list' %}">Shop</a>
+				<a href="{% url 'cart:cart_detail' %}">Cart</a>
+			</div>
+		</article>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtkvEAOY8CXn1JMbPqu3NZjzXOxqLoLK4&callback=initMap"></script>
+		<acticle class="horizontal-footer">
+			<div id="footer">
+				<p>Need help locating us?</p>
+				<p>Give Us A Call At (phone number)</p>
+				<p>We'll help guide you to our store</p>
+			</div>
+		</acticle>
+	</section>
 </body>
 </html>
