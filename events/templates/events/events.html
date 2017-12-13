@@ -2,6 +2,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Events</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/events.css' %}">
 </head>
 <body>
 	<h1>Magic Events</h1>
@@ -10,27 +12,30 @@
 		<a href="{% url 'shop:product_list' %}">Shop</a>
 		<a href="{% url 'cart:cart_detail' %}">Cart</a>
 	</nav>
-	<section id="Thur">
-		<h2>Thursdays</h2>
-		<h4>MTG - Commander Casual</h4>
-		<p id="time">6pm - 10pm</p>
-		<p id="context">Bring your Commander deck and come play with Us!</p>
-		<p id="context">These are free events</p>
-		<a href="">**link to rules**</a>
-	</section>
-	<section id="Fri">
-		<h2>Fridays</h2>
-		<h4>MTG - FNM: Booster Draft</h4>
-		<p id="time">6pm - 11pm</p>
-		<p id="context">Draft starts a <b>7pm SHARP</b> but please get here early to get signed up and settled. These can get <b>VERY</b> full and sometimes we will hit full capacity</p><br>
-		<p>Booster draft tournament of the latest sets with prozes!</p>
-		<a href="">**link to rules**</a>
-	</section>
-	<section id="Sat">
-		<h2>Saturdays</h2>
-		<h4>MTG - Free Play</h4>
-		<p id="time">12:30pm - 6pm</p>
-		<p id="context">Bring a deck and test it against others! This is free and just for fun.</p>
-	</section>
+	<article>
+		<section id="Thur">
+			<h2>Thursdays</h2>
+			<h4>MTG - Commander Casual</h4>
+			<p id="time">6pm - 10pm</p>
+			<p id="context">Bring your Commander deck and come play with Us!</p>
+			<p id="context">These are free events</p>
+			<a href="https://magic.wizards.com/en/content/commander-format">View Rules</a>
+		</section>
+		<section id="Fri">
+			<h2>Fridays</h2>
+			<h4>MTG - FNM: Booster Draft</h4>
+			<p id="time">6pm - 11pm</p>
+			<p id="context">Draft starts a <b>7pm SHARP</b> but please get here early to get signed up and settled. These can get <b>VERY</b> full and sometimes we will hit full capacity</p><br>
+			<p>Booster draft tournament of the latest sets with prozes!</p>
+			<a href="https://magic.wizards.com/en/game-info/gameplay/formats/booster-draft">View Rules</a>
+		</section>
+		<section id="Sat">
+			<h2>Saturdays</h2>
+			<h4>MTG - Free Play</h4>
+			<p id="time">12:30pm - 6pm</p>
+			<p id="context">Bring a deck and test it against others! This is free and just for fun.</p>
+		</section>
+	</article>
+	<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=millgeekcomics%40gmail.com&amp;color=%23B1365F&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </body>
 </html>
