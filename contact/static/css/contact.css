@@ -7,7 +7,7 @@ h2 {
 	font-size: 36px;
 }
 
-.map-view {
+.map-container {
 	width: 30%;
 	height: 600px;
 	position: relative;
@@ -23,12 +23,13 @@ h2 {
 
 .nav-view {
 	border: 10px ridge #000;
-}
-
-.nav {
 	position: relative;
 	left: 650px;
 	top: -100px;
+}
+
+.nav {
+	
 }
 
 .horizontal-footer {

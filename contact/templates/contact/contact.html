@@ -16,8 +16,8 @@
 			<a href="{% url 'cart:cart_detail' %}">Cart</a>
 		</div>
 	</section>
-	<section class="grid-view">
-		<article class="map">
+	<section class="container">
+		<article class="map-container">
 			<div id="map"></div>
 		</article>
 		<article class="contact-form">
@@ -34,3 +34,21 @@
 	</section>
 </body>
 </html>
+
+<div class="wrapper">
+	<div class="map"></div>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtkvEAOY8CXn1JMbPqu3NZjzXOxqLoLK4&callback=initMap"></script>
+	<div class="form">
+		<form action="" method="post">
+			{{ csrf_token }}
+			<input type="text" name="name">
+			<input type="text" name="email">
+			<textarea name="body" id="" cols="30" rows="10"></textarea>
+			<input type="submit" name="submit" value="Contact Us">
+		</form>
+	</div>
+	<div class="footer">
+		<p>Having trouble finding us?</p>
+		<p>Give us a call at **Phone Number**</p>
+	</div>
+</div>
