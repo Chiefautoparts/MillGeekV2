@@ -4,31 +4,33 @@
 	<title>Events</title>
 </head>
 <body>
-	<div id='cal'>
-		<div class="header">
-			<span class="left_button" id="prev"> &lang;</span>
-			<span class="left_hook"></span>
-			<span class="month-year" id="label"> June 20&0 </span>
-			<span class="right_hook"></span>
-			<span class="right_button" id="next"> &rang; </span>
-		</div>
-		<table id="days">
-			<td>Sun</td>
-			<td>Mon</td>
-			<td>Tue</td>
-			<td>Wed</td>
-			<td>Thu</td>
-			<td>Fri</td>
-			<td>Sat</td>
-			
-		</table>
-		<div id="cal-frams">
-			<table class="curr">
-				<tbody>
-					<tr><td class="nil"></td><td class="nil"></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td class="today">11</td><td>12</td></tr><tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr><tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr><tr><td>27</td><td>28</td><td>29</td><td>30</td><td class="nil"></td><td class="nil"></td><td class="nil"></td></tr>
-				</tbody> 
-			</table>
-		</div>
-	</div>
+	<h1>Magic Events</h1>
+	<nav>
+		<a href="{% url 'home:index' %}">Home</a>
+		<a href="{% url 'shop:product_list' %}">Shop</a>
+		<a href="{% url 'cart:cart_detail' %}">Cart</a>
+	</nav>
+	<section id="Thur">
+		<h2>Thursdays</h2>
+		<h4>MTG - Commander Casual</h4>
+		<p id="time">6pm - 10pm</p>
+		<p id="context">Bring your Commander deck and come play with Us!</p>
+		<p id="context">These are free events</p>
+		<a href="">**link to rules**</a>
+	</section>
+	<section id="Fri">
+		<h2>Fridays</h2>
+		<h4>MTG - FNM: Booster Draft</h4>
+		<p id="time">6pm - 11pm</p>
+		<p id="context">Draft starts a <b>7pm SHARP</b> but please get here early to get signed up and settled. These can get <b>VERY</b> full and sometimes we will hit full capacity</p><br>
+		<p>Booster draft tournament of the latest sets with prozes!</p>
+		<a href="">**link to rules**</a>
+	</section>
+	<section id="Sat">
+		<h2>Saturdays</h2>
+		<h4>MTG - Free Play</h4>
+		<p id="time">12:30pm - 6pm</p>
+		<p id="context">Bring a deck and test it against others! This is free and just for fun.</p>
+	</section>
 </body>
 </html>
