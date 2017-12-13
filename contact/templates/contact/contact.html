@@ -3,24 +3,52 @@
 	<meta charset="UTF-8">
 	<title>Mill Geek Comics</title>
 	{% load static %}
-	<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+	<link rel="stylesheet" href="{% static 'css/contact-grid.css' %}">
 	<script src="{% static 'js/contact.js' %}"></script>
 	
 </head>
 <body>
 	<h2>Contact Us</h2>
-	<div id="map"></div>
-	
-	<div class="nav">
-		<a href="{% url 'home:index' %}">Home</a>
-		<a href="{% url 'shop:product_list' %}">Shop</a>
-		<a href="{% url 'cart:cart_detail' %}">Cart</a>
-	</div>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtkvEAOY8CXn1JMbPqu3NZjzXOxqLoLK4&callback=initMap"></script>
-	<div id="footer">
-		<p>Need help locating us?</p>
-		<p>Give Us A Call At (phone number)</p>
-		<p>We'll help guide you to our store</p>
-	</div>
+	<section class="header">
+		<div class="nav">
+			<a href="{% url 'home:index' %}">Home</a>
+			<a href="{% url 'shop:product_list' %}">Shop</a>
+			<a href="{% url 'cart:cart_detail' %}">Cart</a>
+		</div>
+	</section>
+	<section class="container">
+		<article class="map-container">
+			<div id="map"></div>
+		</article>
+		<article class="contact-form">
+			
+		</article>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtkvEAOY8CXn1JMbPqu3NZjzXOxqLoLK4&callback=initMap"></script>
+		<acticle class="footer">
+			<div id="footer">
+				<p>Need help locating us?</p>
+				<p>Give Us A Call At (phone number)</p>
+				<p>We'll help guide you to our store</p>
+			</div>
+		</acticle>
+	</section>
 </body>
 </html>
+
+<div class="wrapper">
+	<div class="map"></div>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtkvEAOY8CXn1JMbPqu3NZjzXOxqLoLK4&callback=initMap"></script>
+	<div class="form">
+		<form action="" method="post">
+			{{ csrf_token }}
+			<input type="text" name="name">
+			<input type="text" name="email">
+			<textarea name="body" id="" cols="30" rows="10"></textarea>
+			<input type="submit" name="submit" value="Contact Us">
+		</form>
+	</div>
+	<div class="footer">
+		<p>Having trouble finding us?</p>
+		<p>Give us a call at **Phone Number**</p>
+	</div>
+</div>

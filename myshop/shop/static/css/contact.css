@@ -7,16 +7,32 @@ h2 {
 	font-size: 36px;
 }
 
+.map-view {
+	width: 30%;
+	height: 600px;
+	position: relative;
+	left: 10px;
+	margin-right: 10px;
+}
+
 #map {
-	height: 400px;
-	width: 400px;
+	height: 600px;
+	width: 600px;
 	border: 7px groove rgb(102, 102, 102);
+}
+
+.nav-view {
+	border: 10px ridge #000;
 }
 
 .nav {
 	position: relative;
 	left: 650px;
 	top: -100px;
+}
+
+.horizontal-footer {
+	border: 10px ridge #000;
 }
 
 #footer {
