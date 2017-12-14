@@ -65,11 +65,12 @@ body {
 	color: #00FF00FF;
 }
 
-.right {
-	float: right;
-	clear: both;
-}
 
+.important {
+	float: right;
+	position: relative;
+	
+}
 
 #post {
 	position: relative;
