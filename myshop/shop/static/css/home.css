@@ -11,13 +11,12 @@ html {
 
 body {
 	font-family: 'Acme', sans-serif;
-	background-image: url("img/background1.jpg");
+	/*background-image: url("img/background1.jpg");
 	background-repeat: no-repeat;
 	background-size: 88% 50%;
 	background-attachment: fixed;
-	background-position: top;
-	color: #f2f2f2;
-
+	background-position: top;*/
+	color: #f2f2f2;	
 }
 
 .main article img {
@@ -65,11 +64,18 @@ body {
 	color: #00FF00FF;
 }
 
-.right {
+
+.important {
+	border: 7px dotted #ff0000;
+	overflow: scroll;
 	float: right;
+	width: 30%;
+	height: 250px;
+	position: relative;
+	top: -350px;
+	right: 15%;
 	clear: both;
 }
-
 
 #post {
 	position: relative;

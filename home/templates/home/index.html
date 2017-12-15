@@ -13,11 +13,13 @@
 		<article>
 			<img src="{% static 'img/millgeeklogo.png' %}" alt="">
 			<div class="topNav">
-				<a href="{% url 'home:index' %}">Geek Home</a>
-				<a href="{% url 'castUs:contact' %}">Cast Us</a>
-				<a href="{% url 'about:basic' %}">Us Geek</a>
+				<a href="{% url 'home:index' %}">Home</a>
+				<a href="{% url 'castUs:contact' %}">Contact Us</a>
+				<a href="{% url 'about:basic' %}">About Us</a>
 				<a href="{% url 'events:event' %}">Events</a>
+				<a href="{% url 'events:calendar' %}">Calendar</a>
 				<a href="{% url 'shop:product_list' %}">Ye Merchant Shope</a>
+				<a href="{% url 'admin:index' %}">Admin</a>
 			</div>
 			<div id="logreg">
 				<p>Log into your geek page <a href="{% url 'log_reg:logPage' %}">Here</a></p>
@@ -34,15 +36,14 @@
 				</div>
 			</div>
 		</section>
-		<section>
-			<h2>Important Notes</h2>
-			{% for post in posts %}
-				<h3>{{ post.title }}</h3>
-				<p>{{ post.body }}</p>
-				<img src="{{ post.image }}" alt="">
-			{% endfor %}
-		</section>
-		
+			<section class="important">
+				<h2>Important Notes</h2>
+				{% for post in posts %}
+					<h3>{{ post.title }}</h3>
+					<p>{{ post.body }}</p>
+					<img src="{{ post.image }}" alt="">
+				{% endfor %}
+			</section>
 		<article class="footer">
 			
 				<a id="link" href="#">Information</a>

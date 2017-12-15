@@ -17,6 +17,11 @@ h2 {
 	border: 7px groove #0905;
 }
 
+.footer {
+	position: relative;
+	top: -150;
+	left: 52%;
+}
 #footer {
 	text-align: center;
 	width: 40%;
@@ -30,9 +35,10 @@ h2 {
 	clear: both;
 	margin-top: 20%;
 	margin-right: 25%;
+	border: 7px double;
 }
 
 .nav button {
-	height: 75px;
-	width: 150px;
+	height: 35px;
+	width: 50px;
 }
