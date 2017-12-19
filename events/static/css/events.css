@@ -1,5 +1,6 @@
 body {
-    background: #9A9A9AFF; 
+    background: #9A9A9AFF;
+    text-align: center;
 }
 
 h2 {
@@ -9,4 +10,9 @@ h2 {
 
 h4 {
     color: #ff0000;
+}
+
+nav a {
+	font-size: 28px;
+	font-weight: bolder;
 }
