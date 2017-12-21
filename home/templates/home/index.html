@@ -43,14 +43,7 @@
 				</div>
 			</div>
 		</section>
-			<section class="important">
-				<h2>Important Notes</h2>
-				{% for post in posts %}
-					<h3>{{ post.title }}</h3>
-					<p>{{ post.body }}</p>
-					<img src="{{ post.image }}" alt="">
-				{% endfor %}
-			</section>
+			
 		<article class="footer">
 
 			<table>
@@ -75,11 +68,11 @@
 					<tr>
 						<td><a href="{% url 'events:calendar' %}">Calendar</td>
 						<td> </td>
-						<td></td>
+						<td><a href="{% url 'admin:index' %}">Employee Login</a></td>
 					</tr>
 				</tbody>
-			</table>			<h3 id="digits">(425) 415-6666</h3>
-			
+			</table>
+			<h3 id="digits">(425) 415-6666</h3>
 		</article>
 	</main>
 </body>
