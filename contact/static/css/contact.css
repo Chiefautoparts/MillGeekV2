@@ -1,6 +1,7 @@
 body {
 	background-color: #919191FF;
 	color: #000;
+	text-align: center;
 	
 }
 
@@ -30,6 +31,7 @@ h2 {
 
 .nav {
 	float: right;
+	width: 200px;
 	font-size: 28px;
 	display: block;
 	clear: both;
@@ -40,5 +42,5 @@ h2 {
 
 .nav button {
 	height: 35px;
-	width: 50px;
+	width: 75px;
 }

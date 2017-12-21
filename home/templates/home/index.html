@@ -14,24 +14,31 @@
 			<img src="{% static 'img/millgeeklogo.png' %}" alt="">
 			<div class="topNav">
 				<a href="{% url 'home:index' %}">Home</a>
-				<a href="{% url 'castUs:contact' %}">Contact Us</a>
+				<a href="{% url 'contact:contact' %}">Contact Us</a>
 				<a href="{% url 'about:basic' %}">About Us</a>
 				<a href="{% url 'events:event' %}">Events</a>
 				<a href="{% url 'events:calendar' %}">Calendar</a>
 				<a href="{% url 'shop:product_list' %}">Ye Merchant Shope</a>
-				<a href="{% url 'admin:index' %}">Admin</a>
 			</div>
 			<div id="logreg">
 				<p>Log into your geek page <a href="{% url 'log_reg:logPage' %}">Here</a></p>
 				<p></p>
 			</div>
 		</article>
+		<section class="important">
+				<h2>Important Notes</h2>
+				{% for post in posts %}
+					<h3>{{ post.title }}</h3>
+					<p>{{ post.body }}</p>
+					<img src="{{ post.image }}" alt="">
+				{% endfor %}
+			</section>
 		<section class="rss-feed">
-			<div id="widgetmain" style="text-align: center; overflow-y:auto; overflow-x:hidden; width:850px; background-color:#bababa; border:5px ridge #333333;">
-				<div id="rsswidget" style="height:500px;">
-					<iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1512622485821&amp;x=https%3A%2F%2Fmagic.wizards.com%2Fen%2Frss%2Frss.xml&amp;w=850&amp;h=500&amp;bc=333333&amp;bw=1&amp;bgc=transparent&amp;m=20&amp;it=false&amp;t=(default)&amp;tc=333333&amp;ts=15&amp;tb=transparent&amp;il=true&amp;lc=0000FF&amp;ls=14&amp;lb=false&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=false&amp;dtc=284F2D&amp;dts=12" border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0" style="border:0; padding:0; margin:0; width:850px; height:500px;" id="rssOutput">Reading RSS Feed ...</iframe>
+			<div id="widgetmain" style="text-align:left;overflow-y:auto;overflow-x:hidden;width:650px;background-color:#FFFFFF; border:3px solid #333333;">
+				<div id="rsswidget" style="height:800px;">
+					<iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1513681142282&amp;x=https%3A%2F%2Fmagic.wizards.com%2Fen%2Frss%2Frss.xml&amp;w=800&amp;h=800&amp;bc=333333&amp;bw=3&amp;bgc=FFFFFF&amp;m=20&amp;it=true&amp;t=Magic News&amp;tc=333333&amp;ts=15&amp;tb=transparent&amp;il=true&amp;lc=0000FF&amp;ls=14&amp;lb=false&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=false&amp;dtc=284F2D&amp;dts=12" border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0" style="border:0; padding:0; margin:0; width:650px; height:800px;" id="rssOutput">Reading RSS Feed ...</iframe>
 				</div>
-				<div style="text-align:right; margin-bottom:0; border-top:1px solid #333333;" id="widgetbottom">
+				<div style="text-align:right;margin-bottom:0;border-top:3px solid #333333;" id="widgetbottom">
 					<span style="font-size:70%"><a href="http://www.rssfeedwidget.com">rss feed widget</a>&nbsp;</span><br>
 				</div>
 			</div>
@@ -45,20 +52,33 @@
 				{% endfor %}
 			</section>
 		<article class="footer">
-			
-				<a id="link" href="#">Information</a>
-				<a id="link" href="#">Location</a>
-				<a id="link" href="#">Company</a>
-			
-				<a id="link" href="#">Welcome</a>
-				<a id="link" href="#">Area Map</a>
-				<a id="link" href="#">About Us</a>
-			
-				<a id="link" href="#">Schedule</a>
-				<a id="link" href="#">Address</a>
-				<a id="link" href="#">Terms</a>
-				<a id="link" href="#">Contact Us</a>
-				<h3 id="digits">(425) 415-6666</h3>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Information</th>
+						<th>Location</th>
+						<th>Company</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="{% url 'home:index' %}">Welcome</a></td>
+						<td><a href="{% url 'contact:contact' %}">Map</a></td>
+						<td><a href="{% url 'about:basic' %}">About Us</a></td>
+					</tr>
+					<tr>
+						<td><a href="{% url 'events:event' %}">Schedule</a></td>
+						<td><a href="{% url 'contact:contact' %}">Address</a></td>
+						<td><a href="{% url 'contact:contact' %}">Contact Us</a></td>
+					</tr>
+					<tr>
+						<td><a href="{% url 'events:calendar' %}">Calendar</td>
+						<td> </td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>			<h3 id="digits">(425) 415-6666</h3>
 			
 		</article>
 	</main>
