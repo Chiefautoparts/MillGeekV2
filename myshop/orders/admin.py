@@ -5,6 +5,27 @@ from django.contrib import admin
 from django.core.urlresolvers import reverse
 from .models import Order, OrderItem
 
+# import easypost
+
+# easypost.api_key = "vacUtXgUFHIaTYavFWSxig"
+
+# fromAddress = easypost.Address.create(
+# 	company='MillGeekComics',
+# 	street1='123 fake st',
+# 	street2='suite 12',
+# 	city='Bothell',
+# 	state='WA',
+# 	zip='98011',
+# 	phone='425211111'
+# 	)
+
+# toAddress = easypost.Address.create(
+# 	name=order.name,
+# 	street=order.address,
+# 	city=order.city,
+# 	zip=order.postal_code
+# 	)
+
 class OrderItemInline(admin.TabularInline):
 	model = OrderItem
 	raw_id_fields = ['product']

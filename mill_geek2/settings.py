@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.admindocs',
     'home',
     'contact',
-    'log_reg',
     'paypal.standard.ipn',
     'myshop.payment',
     'myshop.cart',
@@ -89,14 +88,19 @@ WSGI_APPLICATION = 'mill_geek2.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'millgeekcomics',
-	'USER': 'millgeekcomics',
-	'PASSWORD': 'Deadp00l',
-	'HOST': 'localhost',
-	'PORT': '',
-    }
+
+		'default': {
+			'ENGINE': 'django.db.backends.sqlite3',
+			'NAME': 'millgeekcomics',
+		}
+ #    'default': {
+ #        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+ #        'NAME': 'millgeekcomics',
+	# 'USER': 'millgeekcomics',
+	# 'PASSWORD': 'Deadp00l',
+	# 'HOST': 'localhost',
+	# 'PORT': '',
+    #}
 }
 
 
