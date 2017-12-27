@@ -1,0 +1,17 @@
+body {
+	background-color: #CECECEFF;
+
+}
+
+nav {
+	margin: 15px;
+	font-size: 22px;
+	text-align: center;
+}
+
+#wrapper {
+	border: 4px groove #17DC13FF;
+	width: 800;
+	height: 600;
+	padding: 10px;
+}
