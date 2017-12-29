@@ -45,6 +45,12 @@ body {
 	text-transform: uppercase;
 }
 
+#navBox {
+	position: relative;
+	top:-250;
+	left: 150;
+}
+
 .menu {
 	position: relative;
 	top: 350px;

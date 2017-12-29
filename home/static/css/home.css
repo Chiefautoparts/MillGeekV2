@@ -4,7 +4,9 @@
 	font-family: 'Acme', sans-serif;
 }
 
-@-webkit-keyframes Blink { 50% { Border-color: #ff0000; } }
+@keyframes blink {
+	50% { border-color: #ff0000; }
+}
 
 html {
 	background: linear-gradient(#fff, #000);
@@ -68,7 +70,7 @@ body {
 
 
 .important {
-	/*border: 7px dotted #ff0000;*/
+	border: 7px dotted #ff0000;
 	overflow: scroll;
 	float: right;
 	width: 30%;
@@ -79,7 +81,7 @@ body {
 	clear: both;
 	text-align: center;
 	font-size: 1.5em;
-	-webkit-animation:Blink .5s step-end infinite alternate;
+	animation: blink .5s step-end infinite alternate;
 }
 
 

@@ -9,7 +9,11 @@
 	<script src="../static/css/js/aboutus.js"></script>
 </head>
 <body>
-
+	<div id="navBox" style="display:hidden;">
+		<button id="navButton">
+			<a href="{% url 'home:index' %}">Home</a>
+		</button>
+	</div>
 	<div class="fade"></div>
 	<section class="geekWars">
 		<div class="crawl">
@@ -24,9 +28,7 @@
 	</section>
 	<section>
 		 
-        <div id="navBox">
-        	<a href="{% url 'home:index' %}">Home</a>
-        </div>
+        
 	</section>
 </body>
 </html>
