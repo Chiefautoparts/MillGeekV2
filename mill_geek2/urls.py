@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
  	url(r'^', include('home.urls', namespace='home')),
     #url(r'^blog/', include('blog.urls', namespace='blog', app_name='blog')),
- 	url(r'^log_reg/', include('log_reg.urls', namespace='log_reg')),
+ 	#url(r'^log_reg/', include('log_reg.urls', namespace='log_reg')),
     url(r'^events/', include('events.urls', namespace='events')),
     url(r'^castus/', include('contact.urls', namespace='contact')),
     url(r'^about/', include('about.urls', namespace='about')),

@@ -4,6 +4,10 @@
 	font-family: 'Acme', sans-serif;
 }
 
+@keyframes blink {
+	50% { border-color: #ff0000; }
+}
+
 html {
 	background: linear-gradient(#fff, #000);
 	/*background: linear-gradient(#c7c7c7c7, #686868);*/
@@ -77,6 +81,7 @@ body {
 	clear: both;
 	text-align: center;
 	font-size: 1.5em;
+	animation: blink .5s step-end infinite alternate;
 }
 
 
@@ -95,3 +100,6 @@ body {
 .footer a:visited {
 	color: #B1090CFF;
 }
+
+
+@ -webkit-keyframes Blink{ 50%{ border-color: #ff0000; } }

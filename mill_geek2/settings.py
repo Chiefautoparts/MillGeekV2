@@ -20,13 +20,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'getToTheChoppa'
+SECRET_KEY = '_5v1$fm^(p6n@79$b=-^gnacshoxt+3e2h$sf-wu=bu#x4_m-9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 #['2e38dc33.ngrok.io']
+
+# Uncomment following code when deploying site
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# X_FRAME_OPTIONS = 'DENY'
+# CSRF_COOKIE_HTTPONLY = True
 
 
 # Application definition
@@ -41,7 +51,6 @@ INSTALLED_APPS = [
     'django.contrib.admindocs',
     'home',
     'contact',
-    'log_reg',
     'paypal.standard.ipn',
     'myshop.payment',
     'myshop.cart',
@@ -89,14 +98,19 @@ WSGI_APPLICATION = 'mill_geek2.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'millgeekcomics',
-	'USER': 'millgeekcomics',
-	'PASSWORD': 'Deadp00l',
-	'HOST': 'localhost',
-	'PORT': '',
-    }
+
+		'default': {
+			'ENGINE': 'django.db.backends.sqlite3',
+			'NAME': 'millgeekcomics',
+		}
+ #    'default': {
+ #        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+ #        'NAME': 'millgeekcomics',
+	# 'USER': 'millgeekcomics',
+	# 'PASSWORD': 'Deadp00l',
+	# 'HOST': 'localhost',
+	# 'PORT': '',
+    #}
 }
 
 
