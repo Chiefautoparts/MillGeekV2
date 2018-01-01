@@ -21,6 +21,7 @@
 				<a href="{% url 'shop:product_list' %}">Shop</a>
 			</div>
 		</article>
+		<div id="wrapper">
 		<section class="important">
 				<h2>Important Notes</h2>
 				{% for post in posts %}
@@ -29,6 +30,7 @@
 					<img src="{{ post.image }}" alt="">
 				{% endfor %}
 			</section>
+		</div>
 		<section class="rss-feed">
 			<div id="widgetmain" style="text-align:left;overflow-y:auto;overflow-x:hidden;width:850px;background-color:#FFFFFF; border:3px solid #333333;margin-top: 10px;">
 				<div id="rsswidget" style="height:800px;">

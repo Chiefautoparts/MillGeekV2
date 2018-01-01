@@ -68,23 +68,31 @@ body {
 	color: #00FF00FF;
 }
 
+/*#wrapper {
+	;
+	-webkit-animation: flash linear 1s infinite;
+	animation: flash linear 1s infinite;
+}*/
 
 .important {
 	border: 7px dotted #ff0000;
+	background: linear-gradient(#0B0B0BFF, #424242FF);
 	overflow: scroll;
 	float: right;
 	width: 30%;
 	height: 350px;
-	position: fixed;
+	position: relative;
 	/*top: -450px;*/
 	right: 80;
 	clear: both;
 	text-align: center;
 	font-size: 1.5em;
-	animation: blink .5s step-end infinite alternate;
+	
 }
 
-
+#widgetmain {
+	position: relative;
+}
 
 .footer {
 	background-color: #000;
@@ -101,5 +109,16 @@ body {
 	color: #B1090CFF;
 }
 
+@-webkit-keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
+}
+
+@keyframes {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
+}
 
 @ -webkit-keyframes Blink{ 50%{ border-color: #ff0000; } }
