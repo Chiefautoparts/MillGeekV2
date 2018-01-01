@@ -96,15 +96,6 @@ DATABASES = {
 			'NAME': 'dataGeeks',
 
 		}
-
- #    'default': {
- #        'ENGINE': 'django.db.backends.postgresql_psycopg2',
- #        'NAME': 'millgeekcomics',
-	# 'USER': 'millgeekcomics',
-	# 'PASSWORD': 'Deadp00l',
-	# 'HOST': 'localhost',
-	# 'PORT': '',
-    #}
 }
 
 

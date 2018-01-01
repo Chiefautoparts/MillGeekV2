@@ -1,20 +1,20 @@
 body {
-	background-color: #919191FF;
+	background: linear-gradient(#fff, #000);
 	color: #000;
 	text-align: center;
 	
 }
 
 h2 {
-	font-size: 36px;
+	font-size:64px;
 }
 
 
 
 #map {
 	text-align: center;
-	height: 600px;
-	width: 600px;
+	height: 700px;
+	width: 700px;
 	border: 7px groove #0905;
 }
 
@@ -31,16 +31,15 @@ h2 {
 
 .nav {
 	float: right;
-	width: 200px;
-	font-size: 28px;
+	width: 300px;
+	font-size: 32px;
 	display: block;
 	clear: both;
-	margin-top: 20%;
-	margin-right: 25%;
+	margin-right: 100px;
 	border: 7px double;
 }
 
 .nav button {
-	height: 35px;
-	width: 75px;
+	height: 45px;
+	width: 85px;
 }
