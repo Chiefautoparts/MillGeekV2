@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Mill Geek Comics{% endblock %}</title>
+	<link rel="stylesheet" href="{% static 'css/geekBase.css' %}">
+</head>
+<body>
+	<div id="header">
+		<a href="/" class="logo">Home</a>
+		<a href="{% url 'contact:contact' %}" class="logo">Contact Us</a>
+		<a href="{% url 'about:basic' %}" class="logo">About Us</a>
+		<a href="{% url 'events:event' %}" class="logo">Events</a>
+		<a href="{% url 'events:calendar' %}" class="logo">Calendar</a>
+	</div>
+	<div id="subheader">
+		<div class="cart">
+			{% with total_items=cart|length %}
+				{% if cart|length > 0 %}
+					Your cart:
+					<a href="{% url "cart:cart_detail" %}">
+						{{ total_items }} item {{ total_items|pluralize }}, ${{ cart.get_total_price }}
+					</a>
+				{% else %}
+					Your cart is empty.
+				{% endif %}
+			{% endwith %}
+		</div>
+	</div>
+	<div id="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+</html>

@@ -44,13 +44,13 @@ INSTALLED_APPS = [
     'home',
     'contact',
     'paypal.standard.ipn',
-    'myshop.payment',
-    'myshop.cart',
-    'myshop.orders',
-    'myshop.shop',
+    'payment',
+    'cart',
+    'orders',
+    'shop',
     'events',
     'about',
-    'myshop.coupons',
+    'coupons',
     
 ]
 
@@ -77,7 +77,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'myshop.cart.context_processors.cart',
+                'cart.context_processors.cart',
+                'django.core.context_processors.media',
             ],
         },
     },
