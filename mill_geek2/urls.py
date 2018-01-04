@@ -26,12 +26,16 @@ urlpatterns = [
     url(r'^events/', include('events.urls', namespace='events')),
     url(r'^castus/', include('contact.urls', namespace='contact')),
     url(r'^about/', include('about.urls', namespace='about')),
- 	url(r'^cart/', include('myshop.cart.urls', namespace='cart')),  
-    url(r'^orders/', include('myshop.orders.urls', namespace='orders')),
+ 	url(r'^cart/', include('cart.urls', namespace='cart')),  
+    url(r'^orders/', include('orders.urls', namespace='orders')),
     url(r'^paypal/', include('paypal.standard.ipn.urls')),
-    url(r'^payment/', include('myshop.payment.urls', namespace='payments')),
-    url(r'^coupons/', include('myshop.coupons.urls', namespace='coupons')),
-    url(r'^shop/', include('myshop.shop.urls', namespace='shop')),  
-]
+    url(r'^payment/', include('payment.urls', namespace='payments')),
+    url(r'^coupons/', include('coupons.urls', namespace='coupons')),
+    url(r'^shop/', include('shop.urls', namespace='shop')),  
+ ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,1 +1,0 @@
-default_app_config = 'myshop.payment.apps.PaymentConfig'
