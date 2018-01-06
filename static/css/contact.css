@@ -20,13 +20,17 @@ h2 {
 
 .footer {
 	position: relative;
-	top: -100;
+	bottom: 220;
 	left: 60%;
 }
 #footer {
 	text-align: center;
 	width: 300px; 
 	border: 7px ridge #0906;
+}
+
+#number {
+	font-size: 1.7em;
 }
 
 .nav {

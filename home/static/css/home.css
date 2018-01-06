@@ -94,6 +94,10 @@ body {
 	position: relative;
 }
 
+#digits {
+	font-size: 2em;
+}
+
 .footer {
 	background-color: #000;
 	border-style: groove;
