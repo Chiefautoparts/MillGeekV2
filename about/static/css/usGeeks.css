@@ -9,7 +9,7 @@ body {
 	position: relative;
 	width: 100%;
 	min-height: 60vh;
-	top: -25px;
+	top: 75px;
 	background-image: linear-gradient(0deg, transparent, black 75%);
 	z-index: 1;
 }
@@ -47,11 +47,16 @@ body {
 
 #navBox {
 	position: relative;
-	top: 400;
+	top: 15;
 	left: 150;
 }
 
-#navButton {
+#returnButton {
+	width:100;
+	height: 70;
+}
+
+#homeButton {
 	width: 100;
 	height: 70;
 	background-color: #CE0000FF;
